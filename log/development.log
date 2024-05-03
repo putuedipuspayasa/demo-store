@@ -1,0 +1,2441 @@
+  [1m[35m (648.8ms)[0m  [1m[35mCREATE DATABASE "demo_commerce_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (188.0ms)[0m  [1m[35mCREATE DATABASE "demo_commerce_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (14.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (3.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-05-03 04:34:56.488969', '2024-05-03 04:34:56.488971') RETURNING "key"[0m
+Migrating to CreateCategories (20240503043433)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.0ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "name" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240503043433') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCategories (20240503043433)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.5ms)[0m  [1m[35mDROP TABLE "categories"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (1.9ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20240503043433'[0m
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateCategories (20240503043433)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "uid" character varying, "name" character varying, "description" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (11.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240503043433') RETURNING "version"[0m
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCategories (20240503043433)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.3ms)[0m  [1m[35mDROP TABLE "categories"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.9ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20240503043433'[0m
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateCategories (20240503043433)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.2ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "uid" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "name" character varying, "description" character varying)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240503043433') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProducts (20240503043935)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "uid" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "category_uid" character varying, "name" character varying, "description" character varying, "price" float)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240503043935') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateProducts (20240503043935)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.1ms)[0m  [1m[35mDROP TABLE "products"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (4.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20240503043935'[0m
+  [1m[36mTRANSACTION (10.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateProducts (20240503043935)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (18.0ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "uid" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "category_uid" character varying, "name" character varying, "description" text, "price" float)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240503043935') RETURNING "version"[0m
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (5.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateProducts (20240503043935)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.9ms)[0m  [1m[35mDROP TABLE "products"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (12.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20240503043935'[0m
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateProducts (20240503043935)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "products" ("id" bigserial primary key, "uid" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "category_uid" character varying, "name" character varying, "description" text, "price" float, "stock" integer)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240503043935') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateUsers (20240503050751)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4672962957319014330)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (9.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateUsers (20240503050751)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(4672962957319014330)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateUsers (20240503050751)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (24.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "uid" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "name" character varying, "email" character varying, "phone" character varying, "type" character varying, "status" character varying)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240503050751') RETURNING "version"[0m
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 13:19:31 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/categories"):
+  
+Started GET "/api/v1/category" for ::1 at 2024-05-03 13:19:53 +0800
+Processing by Api::V1::CategoryController#index as */*
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:4:in `index'
+Completed 200 OK in 56ms (Views: 12.5ms | ActiveRecord: 9.2ms | Allocations: 15592)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 13:20:00 +0800
+  
+ActionController::RoutingError (uninitialized constant Api::V1::CategoriesController):
+  
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 13:22:54 +0800
+Processing by Api::V1::CategoryController#index as */*
+  [1m[36mCategory Load (15.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:4:in `index'
+Completed 200 OK in 18ms (Views: 1.4ms | ActiveRecord: 15.4ms | Allocations: 1315)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 13:23:06 +0800
+Processing by Api::V1::CategoryController#index as */*
+  [1m[36mCategory Load (2.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:4:in `index'
+Completed 200 OK in 14ms (Views: 6.5ms | ActiveRecord: 2.9ms | Allocations: 1304)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-03 13:23:35 +0800
+Processing by Api::V1::CategoryController#store as */*
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 118)
+
+
+  
+NameError (undefined local variable or method `category_param' for an instance of Api::V1::CategoryController):
+  
+app/controllers/api/v1/category_controller.rb:8:in `store'
+Started POST "/api/v1/category" for ::1 at 2024-05-03 14:14:20 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CategoryController#store as */*
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 6630)
+
+
+  
+NameError (undefined local variable or method `category_param' for an instance of Api::V1::CategoryController):
+  
+app/controllers/api/v1/category_controller.rb:8:in `store'
+Started POST "/api/v1/category" for ::1 at 2024-05-03 14:14:56 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CategoryController#store as */*
+Completed 400 Bad Request in 11ms (ActiveRecord: 0.0ms | Allocations: 6812)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: category):
+  
+app/controllers/api/v1/category_controller.rb:21:in `category_params'
+app/controllers/api/v1/category_controller.rb:8:in `store'
+Started POST "/api/v1/category" for ::1 at 2024-05-03 14:16:31 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"T-Shirt", "description"=>"All of T-Shirt", "category"=>{"name"=>"T-Shirt", "description"=>"All of T-Shirt"}}
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 31.2ms | Allocations: 9964)
+
+
+  
+NoMethodError (undefined method `uid=' for nil):
+  
+app/controllers/api/v1/category_controller.rb:9:in `store'
+Started POST "/api/v1/category" for ::1 at 2024-05-03 14:16:54 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"T-Shirt", "description"=>"All of T-Shirt", "category"=>{"name"=>"T-Shirt", "description"=>"All of T-Shirt"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/category_controller.rb:10:in `store'
+  [1m[36mCategory Create (6.9ms)[0m  [1m[32mINSERT INTO "categories" ("uid", "created_at", "updated_at", "name", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["uid", "876f7fb1-e7ec-496e-a81a-d4cee1a384b5"], ["created_at", "2024-05-03 06:16:54.371913"], ["updated_at", "2024-05-03 06:16:54.371913"], ["name", "T-Shirt"], ["description", "All of T-Shirt"]]
+  ↳ app/controllers/api/v1/category_controller.rb:10:in `store'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/category_controller.rb:10:in `store'
+Completed 201 Created in 27ms (Views: 0.3ms | ActiveRecord: 19.4ms | Allocations: 13580)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-03 14:19:56 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (13.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"T-Shirt", "description"=>"All of T-Shirt", "category"=>{"name"=>"T-Shirt", "description"=>"All of T-Shirt"}}
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 17.4ms | Allocations: 11144)
+
+
+  
+NameError (uninitialized constant Api::V1::CategoryController::ULID):
+  
+app/controllers/api/v1/category_controller.rb:9:in `store'
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 14:20:50 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CategoryController#index as */*
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:4:in `index'
+Completed 200 OK in 46ms (Views: 15.5ms | ActiveRecord: 14.4ms | Allocations: 21157)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 14:23:06 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CategoryController#index as */*
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:4:in `index'
+Completed 200 OK in 44ms (Views: 14.3ms | ActiveRecord: 15.7ms | Allocations: 21187)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 14:23:13 +0800
+Processing by Api::V1::CategoryController#index as */*
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:4:in `index'
+Completed 200 OK in 12ms (Views: 3.1ms | ActiveRecord: 7.8ms | Allocations: 4187)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 14:24:59 +0800
+Processing by Api::V1::CategoryController#index as */*
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 848)
+
+
+  
+NameError (uninitialized constant Api::V1::CategoryController::ResponseFormatter):
+  
+app/controllers/api/v1/category_controller.rb:4:in `index'
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 14:25:21 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CategoryController#index as */*
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:4:in `index'
+Completed 200 OK in 42ms (Views: 13.0ms | ActiveRecord: 14.9ms | Allocations: 21271)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 14:26:06 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CategoryController#index as */*
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:4:in `index'
+Completed 200 OK in 65ms (Views: 15.8ms | ActiveRecord: 33.7ms | Allocations: 21277)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 14:26:08 +0800
+Processing by Api::V1::CategoryController#index as */*
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.4ms | Allocations: 705)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 14:26:19 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CategoryController#index as */*
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:4:in `index'
+Completed 200 OK in 45ms (Views: 14.2ms | ActiveRecord: 16.7ms | Allocations: 21276)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 14:26:20 +0800
+Processing by Api::V1::CategoryController#index as */*
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms | Allocations: 704)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 14:26:20 +0800
+Processing by Api::V1::CategoryController#index as */*
+  [1m[36mCategory Load (12.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:4:in `index'
+Completed 200 OK in 15ms (Views: 2.2ms | ActiveRecord: 12.3ms | Allocations: 700)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 14:26:21 +0800
+Processing by Api::V1::CategoryController#index as */*
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.6ms | Allocations: 700)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 14:26:21 +0800
+Processing by Api::V1::CategoryController#index as */*
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms | Allocations: 687)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-03 14:32:46 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of T-Shirt", "category"=>{"name"=>"", "description"=>"All of T-Shirt"}}
+Completed 422 Unprocessable Entity in 20ms (Views: 5.7ms | ActiveRecord: 16.4ms | Allocations: 14358)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-03 14:33:23 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of T-Shirt", "category"=>{"name"=>"", "description"=>"All of T-Shirt"}}
+Completed 400 Bad Request in 17ms (Views: 2.0ms | ActiveRecord: 12.6ms | Allocations: 13102)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-03 14:33:37 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of T-Shirt", "category"=>{"name"=>"", "description"=>"All of T-Shirt"}}
+Completed 400 Bad Request in 19ms (Views: 2.7ms | ActiveRecord: 14.9ms | Allocations: 13102)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-03 14:33:38 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of T-Shirt", "category"=>{"name"=>"", "description"=>"All of T-Shirt"}}
+Completed 400 Bad Request in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 705)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-03 14:33:39 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of T-Shirt", "category"=>{"name"=>"", "description"=>"All of T-Shirt"}}
+Completed 400 Bad Request in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 702)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-03 14:33:40 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of T-Shirt", "category"=>{"name"=>"", "description"=>"All of T-Shirt"}}
+Completed 400 Bad Request in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 702)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-03 14:34:12 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of T-Shirt", "category"=>{"name"=>"", "description"=>"All of T-Shirt"}}
+Completed 400 Bad Request in 8ms (Views: 0.5ms | ActiveRecord: 10.7ms | Allocations: 3294)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-03 14:34:53 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of T-Shirt", "category"=>{"name"=>"", "description"=>"All of T-Shirt"}}
+Completed 400 Bad Request in 17ms (Views: 2.4ms | ActiveRecord: 16.8ms | Allocations: 13143)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-03 14:35:01 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of T-Shirt", "category"=>{"name"=>"", "description"=>"All of T-Shirt"}}
+Completed 400 Bad Request in 24ms (Views: 0.4ms | ActiveRecord: 9.9ms | Allocations: 3260)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 14:35:19 +0800
+Processing by Api::V1::CategoryController#index as */*
+  [1m[36mCategory Load (2.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:4:in `index'
+Completed 200 OK in 15ms (Views: 3.6ms | ActiveRecord: 2.6ms | Allocations: 2114)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 14:36:04 +0800
+Processing by Api::V1::CategoryController#index as */*
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:4:in `index'
+Completed 200 OK in 15ms (Views: 3.6ms | ActiveRecord: 9.5ms | Allocations: 4226)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 14:36:18 +0800
+Processing by Api::V1::CategoryController#index as */*
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:4:in `index'
+Completed 200 OK in 20ms (Views: 12.5ms | ActiveRecord: 1.6ms | Allocations: 688)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 14:36:18 +0800
+Processing by Api::V1::CategoryController#index as */*
+  [1m[36mCategory Load (12.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:4:in `index'
+Completed 200 OK in 14ms (Views: 1.6ms | ActiveRecord: 12.0ms | Allocations: 689)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 14:36:19 +0800
+Processing by Api::V1::CategoryController#index as */*
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.3ms | Allocations: 687)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 14:36:20 +0800
+Processing by Api::V1::CategoryController#index as */*
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.5ms | Allocations: 700)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 14:36:20 +0800
+Processing by Api::V1::CategoryController#index as */*
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.4ms | Allocations: 687)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-03 14:36:36 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"Jacket", "description"=>"All of Jacket", "category"=>{"name"=>"Jacket", "description"=>"All of Jacket"}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/category_controller.rb:10:in `store'
+  [1m[36mCategory Create (4.3ms)[0m  [1m[32mINSERT INTO "categories" ("uid", "created_at", "updated_at", "name", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["uid", "d511bedf-afac-4a79-84cb-eaa90e2908fc"], ["created_at", "2024-05-03 06:36:36.467228"], ["updated_at", "2024-05-03 06:36:36.467228"], ["name", "Jacket"], ["description", "All of Jacket"]]
+  ↳ app/controllers/api/v1/category_controller.rb:10:in `store'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/category_controller.rb:10:in `store'
+Completed 201 Created in 12ms (Views: 0.3ms | ActiveRecord: 5.7ms | Allocations: 2185)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 22:52:39 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (12.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CategoryController#index as */*
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2343)
+
+
+  
+NoMethodError (undefined method `All' for class Category):
+  
+app/repositories/category_repository.rb:7:in `fetch_all'
+app/controllers/api/v1/category_controller.rb:7:in `index'
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 22:53:12 +0800
+Processing by Api::V1::CategoryController#index as */*
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 149)
+
+
+  
+NameError (uninitialized constant Category::All):
+  
+app/repositories/category_repository.rb:7:in `fetch_all'
+app/controllers/api/v1/category_controller.rb:7:in `index'
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 22:53:29 +0800
+Processing by Api::V1::CategoryController#index as */*
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 142)
+
+
+  
+NameError (uninitialized constant Category::All):
+  
+app/repositories/category_repository.rb:7:in `fetch_all'
+app/controllers/api/v1/category_controller.rb:7:in `index'
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 22:54:11 +0800
+Processing by Api::V1::CategoryController#index as */*
+  [1m[36mCategory Load (5.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:8:in `index'
+Completed 200 OK in 117ms (Views: 32.2ms | ActiveRecord: 77.5ms | Allocations: 14669)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 22:54:14 +0800
+Processing by Api::V1::CategoryController#index as */*
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.4ms | Allocations: 756)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 22:54:15 +0800
+Processing by Api::V1::CategoryController#index as */*
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 747)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 22:54:15 +0800
+Processing by Api::V1::CategoryController#index as */*
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms | Allocations: 747)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 22:54:17 +0800
+Processing by Api::V1::CategoryController#index as */*
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.4ms | Allocations: 754)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 22:54:28 +0800
+Processing by Api::V1::CategoryController#index as */*
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 3.9ms | ActiveRecord: 8.5ms | Allocations: 3782)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 22:54:34 +0800
+Processing by Api::V1::CategoryController#index as */*
+  [1m[36mCategory Load (3.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:8:in `index'
+Completed 200 OK in 28ms (Views: 6.0ms | ActiveRecord: 21.2ms | Allocations: 3748)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 22:54:41 +0800
+Processing by Api::V1::CategoryController#index as */*
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.3ms | Allocations: 742)
+
+
+Started GET "/api/v1/categories/all" for ::1 at 2024-05-03 23:00:52 +0800
+Processing by Api::V1::CategoryController#fetch_all as */*
+  [1m[36mCategory Load (17.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:8:in `fetch_all'
+Completed 200 OK in 21ms (Views: -3.7ms | ActiveRecord: 24.0ms | Allocations: 6395)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 23:00:54 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:13:in `paginate'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.5ms | Allocations: 744)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 23:05:00 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 409)
+
+
+  
+NoMethodError (undefined method `paginate' for an instance of ActiveRecord::Relation):
+  
+app/repositories/category_repository.rb:13:in `fetch_paginate'
+app/controllers/api/v1/category_controller.rb:13:in `paginate'
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 23:06:07 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 428)
+
+
+  
+NoMethodError (undefined method `paginate' for an instance of ActiveRecord::Relation):
+  
+app/repositories/category_repository.rb:13:in `fetch_paginate'
+app/controllers/api/v1/category_controller.rb:13:in `paginate'
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 23:06:42 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 361)
+
+
+  
+NoMethodError (undefined method `paginate' for an instance of ActiveRecord::Relation):
+  
+app/repositories/category_repository.rb:13:in `fetch_paginate'
+app/controllers/api/v1/category_controller.rb:13:in `paginate'
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 23:06:54 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 126)
+
+
+  
+NoMethodError (undefined method `paginate' for an instance of ActiveRecord::Relation):
+  
+app/repositories/category_repository.rb:13:in `fetch_paginate'
+app/controllers/api/v1/category_controller.rb:13:in `paginate'
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 23:07:22 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 403)
+
+
+  
+NoMethodError (undefined method `paginate' for an instance of ActiveRecord::Relation):
+  
+app/repositories/category_repository.rb:13:in `fetch_paginate'
+app/controllers/api/v1/category_controller.rb:12:in `paginate'
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 23:11:25 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CategoryController#paginate as */*
+  [1m[36mCategory Load (5.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%%' OR LOWER(description) LIKE '%%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:21:in `paginate'
+Completed 200 OK in 51ms (Views: 9.0ms | ActiveRecord: 21.3ms | Allocations: 17214)
+
+
+Started GET "/api/v1/categories?perpage=1" for ::1 at 2024-05-03 23:11:33 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"perpage"=>"1"}
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%%' OR LOWER(description) LIKE '%%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:21:in `paginate'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.8ms | Allocations: 850)
+
+
+Started GET "/api/v1/categories?perpage=1" for ::1 at 2024-05-03 23:11:35 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"perpage"=>"1"}
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%%' OR LOWER(description) LIKE '%%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:21:in `paginate'
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.6ms | Allocations: 846)
+
+
+Started GET "/api/v1/categories?per_page=1" for ::1 at 2024-05-03 23:11:39 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"per_page"=>"1"}
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%%' OR LOWER(description) LIKE '%%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:21:in `paginate'
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.5ms | Allocations: 794)
+
+
+Started GET "/api/v1/categories?per_page=1&page=2" for ::1 at 2024-05-03 23:11:46 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"per_page"=>"1", "page"=>"2"}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%%' OR LOWER(description) LIKE '%%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  ↳ app/controllers/api/v1/category_controller.rb:21:in `paginate'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.5ms | Allocations: 792)
+
+
+Started GET "/api/v1/categories?per_page=1&page=2" for ::1 at 2024-05-03 23:15:19 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"per_page"=>"1", "page"=>"2"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 425)
+
+
+  
+NoMethodError (undefined method `page' for an instance of ActiveRecord::Relation):
+  
+app/repositories/category_repository.rb:15:in `fetch_paginate'
+app/controllers/api/v1/category_controller.rb:12:in `paginate'
+Started GET "/api/v1/categories?per_page=1&page=2" for ::1 at 2024-05-03 23:16:27 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"per_page"=>"1", "page"=>"2"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 155)
+
+
+  
+NoMethodError (undefined method `page' for an instance of ActiveRecord::Relation):
+  
+app/repositories/category_repository.rb:15:in `fetch_paginate'
+app/controllers/api/v1/category_controller.rb:12:in `paginate'
+Started GET "/api/v1/categories?per_page=1&page=2" for ::1 at 2024-05-03 23:16:38 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"per_page"=>"1", "page"=>"2"}
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 5.6ms | Allocations: 6479)
+
+
+  
+NoMethodError (undefined method `page' for an instance of ActiveRecord::Relation):
+  
+app/repositories/category_repository.rb:15:in `fetch_paginate'
+app/controllers/api/v1/category_controller.rb:12:in `paginate'
+Started GET "/api/v1/categories?per_page=1&page=2" for ::1 at 2024-05-03 23:24:34 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"per_page"=>"1", "page"=>"2"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 158)
+
+
+  
+NameError (undefined local variable or method `db' for an instance of CategoryRepository):
+  
+app/repositories/category_repository.rb:12:in `fetch_paginate'
+app/controllers/api/v1/category_controller.rb:12:in `paginate'
+Started GET "/api/v1/categories?per_page=1&page=2" for ::1 at 2024-05-03 23:24:47 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"per_page"=>"1", "page"=>"2"}
+  [1m[36mCategory Count (4.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (2.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%%' OR LOWER(description) LIKE '%%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  ↳ app/controllers/api/v1/category_controller.rb:21:in `paginate'
+Completed 200 OK in 97ms (Views: 24.4ms | ActiveRecord: 51.5ms | Allocations: 14331)
+
+
+Started GET "/api/v1/categories?per_page=1&page=2" for ::1 at 2024-05-03 23:30:41 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"per_page"=>"1", "page"=>"2"}
+  [1m[36mCategory Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%%' OR LOWER(description) LIKE '%%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 64ms (Views: 3.0ms | ActiveRecord: 17.1ms | Allocations: 6920)
+
+
+Started GET "/api/v1/categories?per_page=1&page=2" for ::1 at 2024-05-03 23:31:05 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"per_page"=>"1", "page"=>"2"}
+  [1m[36mCategory Count (18.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%%' OR LOWER(description) LIKE '%%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 27ms (Views: 2.7ms | ActiveRecord: 19.2ms | Allocations: 1194)
+
+
+Started GET "/api/v1/categories?per_page=1&page=2" for ::1 at 2024-05-03 23:31:15 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"per_page"=>"1", "page"=>"2"}
+  [1m[36mCategory Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%%' OR LOWER(description) LIKE '%%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.8ms | Allocations: 1187)
+
+
+Started GET "/api/v1/categories?per_page=1&page=2" for ::1 at 2024-05-03 23:32:04 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"per_page"=>"1", "page"=>"2"}
+  [1m[36mCategory Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (4.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%%' OR LOWER(description) LIKE '%%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 17ms (Views: 8.9ms | ActiveRecord: 4.7ms | Allocations: 1187)
+
+
+Started GET "/api/v1/categories?per_page=1&page=1" for ::1 at 2024-05-03 23:32:11 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"per_page"=>"1", "page"=>"1"}
+  [1m[36mCategory Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%%' OR LOWER(description) LIKE '%%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.7ms | Allocations: 1200)
+
+
+Started GET "/api/v1/categories?per_page=1&page=1" for ::1 at 2024-05-03 23:36:57 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"per_page"=>"1", "page"=>"1"}
+  [1m[36mCategory Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%%' OR LOWER(description) LIKE '%%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 25ms (Views: 2.8ms | ActiveRecord: 17.6ms | Allocations: 4353)
+
+
+Started GET "/api/v1/categories?per_page=1&page=1" for ::1 at 2024-05-03 23:38:01 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"per_page"=>"1", "page"=>"1"}
+  [1m[36mCategory Count (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%%' OR LOWER(description) LIKE '%%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 48ms (Views: 3.6ms | ActiveRecord: 35.5ms | Allocations: 4274)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 23:38:08 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  [1m[36mCategory Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%%' OR LOWER(description) LIKE '%%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 10ms (Views: 4.1ms | ActiveRecord: 2.1ms | Allocations: 1247)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 23:38:10 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  [1m[36mCategory Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%%' OR LOWER(description) LIKE '%%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.8ms | Allocations: 1247)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 23:38:10 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  [1m[36mCategory Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%%' OR LOWER(description) LIKE '%%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 0.6ms | Allocations: 1248)
+
+
+Started GET "/api/v1/categories?search=jacket" for ::1 at 2024-05-03 23:38:28 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"search"=>"jacket"}
+  [1m[36mCategory Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 1.1ms | Allocations: 1205)
+
+
+Started GET "/api/v1/categories?search=jackets" for ::1 at 2024-05-03 23:38:32 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"search"=>"jackets"}
+  [1m[36mCategory Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (23.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%jackets%' OR LOWER(description) LIKE '%jackets%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 34ms (Views: 2.7ms | ActiveRecord: 24.1ms | Allocations: 1127)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 23:38:35 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  [1m[36mCategory Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%%' OR LOWER(description) LIKE '%%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 5ms (Views: 2.2ms | ActiveRecord: 0.9ms | Allocations: 1247)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 23:38:41 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  [1m[36mCategory Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%%' OR LOWER(description) LIKE '%%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.7ms | Allocations: 1247)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 23:38:42 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  [1m[36mCategory Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%%' OR LOWER(description) LIKE '%%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.8ms | Allocations: 1247)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 23:39:46 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  [1m[36mCategory Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 8.2ms | Allocations: 1093)
+
+
+  
+NoMethodError (undefined method `downcase' for nil):
+  
+app/repositories/category_repository.rb:40:in `filter_query'
+app/repositories/category_repository.rb:15:in `fetch_paginate'
+app/controllers/api/v1/category_controller.rb:12:in `paginate'
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 23:39:54 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  [1m[36mCategory Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 4.1ms | Allocations: 1092)
+
+
+  
+NoMethodError (undefined method `downcase' for nil):
+  
+app/repositories/category_repository.rb:40:in `filter_query'
+app/repositories/category_repository.rb:15:in `fetch_paginate'
+app/controllers/api/v1/category_controller.rb:12:in `paginate'
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 23:39:59 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  [1m[36mCategory Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%%' OR LOWER(description) LIKE '%%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 39ms (Views: 6.0ms | ActiveRecord: 19.5ms | Allocations: 4367)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 23:40:25 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 146)
+
+
+  
+NameError (undefined local variable or method `null' for an instance of Api::V1::CategoryController):
+  
+app/controllers/api/v1/category_controller.rb:18:in `paginate'
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 23:41:58 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  [1m[36mCategory Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%%' OR LOWER(description) LIKE '%%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 13ms (Views: 2.8ms | ActiveRecord: 7.7ms | Allocations: 4367)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 23:42:11 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  [1m[36mCategory Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 5.3ms | Allocations: 1092)
+
+
+  
+NoMethodError (undefined method `downcase' for nil):
+  
+app/repositories/category_repository.rb:40:in `filter_query'
+app/repositories/category_repository.rb:15:in `fetch_paginate'
+app/controllers/api/v1/category_controller.rb:12:in `paginate'
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 23:42:50 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  [1m[36mCategory Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%%' OR LOWER(description) LIKE '%%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 28ms (Views: 4.5ms | ActiveRecord: 20.7ms | Allocations: 4367)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 23:43:23 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  [1m[36mCategory Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 13ms (Views: 2.6ms | ActiveRecord: 7.8ms | Allocations: 4294)
+
+
+Started GET "/api/v1/categories?search=jackets" for ::1 at 2024-05-03 23:44:10 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"search"=>"jackets"}
+  [1m[36mCategory Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" WHERE (LOWER(name) LIKE '%jackets%' OR LOWER(description) LIKE '%jackets%')[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%jackets%' OR LOWER(description) LIKE '%jackets%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 9ms (Views: 0.9ms | ActiveRecord: 4.1ms | Allocations: 1875)
+
+
+Started GET "/api/v1/categories?search=jacket" for ::1 at 2024-05-03 23:44:14 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"search"=>"jacket"}
+  [1m[36mCategory Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%')[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 30ms (Views: 5.1ms | ActiveRecord: 17.5ms | Allocations: 3609)
+
+
+Started GET "/api/v1/categories?per_page=1&search=jacket" for ::1 at 2024-05-03 23:44:21 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"per_page"=>"1", "search"=>"jacket"}
+  [1m[36mCategory Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%')[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.8ms | Allocations: 1226)
+
+
+Started GET "/api/v1/categories?search=jacket" for ::1 at 2024-05-03 23:44:31 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"search"=>"jacket"}
+  [1m[36mCategory Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%')[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.7ms | Allocations: 1226)
+
+
+Started GET "/api/v1/categories?per_page=1&search=jacket" for ::1 at 2024-05-03 23:44:35 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"per_page"=>"1", "search"=>"jacket"}
+  [1m[36mCategory Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%')[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 7ms (Views: 4.1ms | ActiveRecord: 1.2ms | Allocations: 1226)
+
+
+Started GET "/api/v1/categories?per_page=2&search=jacket" for ::1 at 2024-05-03 23:44:39 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"per_page"=>"2", "search"=>"jacket"}
+  [1m[36mCategory Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%')[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 2], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.8ms | Allocations: 1226)
+
+
+Started GET "/api/v1/categories?per_page=1&search=jacket" for ::1 at 2024-05-03 23:44:42 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"per_page"=>"1", "search"=>"jacket"}
+  [1m[36mCategory Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%')[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.8ms | Allocations: 1226)
+
+
+Started GET "/api/v1/categories?search=jacket" for ::1 at 2024-05-03 23:45:09 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"search"=>"jacket"}
+  [1m[36mCategory Count (68.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%')[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 76ms (Views: 3.1ms | ActiveRecord: 68.5ms | Allocations: 1226)
+
+
+Started GET "/api/v1/categories?per_page=1&search=jacket" for ::1 at 2024-05-03 23:45:36 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"per_page"=>"1", "search"=>"jacket"}
+  [1m[36mCategory Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%')[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 25ms (Views: 3.7ms | ActiveRecord: 18.6ms | Allocations: 4343)
+
+
+Started GET "/api/v1/categories?per_page=1" for ::1 at 2024-05-03 23:45:41 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"per_page"=>"1"}
+  [1m[36mCategory Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.6ms | Allocations: 1145)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 23:45:45 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  [1m[36mCategory Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.5ms | Allocations: 1199)
+
+
+Started GET "/api/v1/categories?per_page=1" for ::1 at 2024-05-03 23:45:50 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"per_page"=>"1"}
+  [1m[36mCategory Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.8ms | Allocations: 1145)
+
+
+Started GET "/api/v1/categories?per_page=1&search=jacket" for ::1 at 2024-05-03 23:45:53 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"per_page"=>"1", "search"=>"jacket"}
+  [1m[36mCategory Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%')[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.6ms | Allocations: 1226)
+
+
+Started GET "/api/v1/categories?per_page=1" for ::1 at 2024-05-03 23:46:04 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"per_page"=>"1"}
+  [1m[36mCategory Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.5ms | Allocations: 1145)
+
+
+Started GET "/api/v1/categories?per_page=1" for ::1 at 2024-05-03 23:46:09 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"per_page"=>"1"}
+  [1m[36mCategory Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 7ms (Views: 2.7ms | ActiveRecord: 1.0ms | Allocations: 1145)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 23:46:12 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  [1m[36mCategory Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.5ms | Allocations: 1199)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 23:46:40 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  [1m[36mCategory Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 12ms (Views: 3.5ms | ActiveRecord: 6.6ms | Allocations: 4304)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-03 23:46:46 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  [1m[36mCategory Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 11ms (Views: 3.0ms | ActiveRecord: 5.7ms | Allocations: 4285)
+
+
+Started GET "/api/v1/categories?search=jacket" for ::1 at 2024-05-03 23:47:03 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"search"=>"jacket"}
+  [1m[36mCategory Count (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%')[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 21ms (Views: 2.8ms | ActiveRecord: 2.3ms | Allocations: 1238)
+
+
+Started GET "/api/v1/categories?per_page=1&search=jacket" for ::1 at 2024-05-03 23:47:09 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"per_page"=>"1", "search"=>"jacket"}
+  [1m[36mCategory Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%')[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.8ms | Allocations: 1226)
+
+
+Started GET "/api/v1/categories?per_page=9&search=jacket" for ::1 at 2024-05-03 23:47:11 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"per_page"=>"9", "search"=>"jacket"}
+  [1m[36mCategory Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%')[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 9], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.9ms | Allocations: 1226)
+
+
+Started GET "/api/v1/categories?search=jacket" for ::1 at 2024-05-03 23:47:27 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"search"=>"jacket"}
+  [1m[36mCategory Count (12.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%')[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 24ms (Views: 3.5ms | ActiveRecord: 13.3ms | Allocations: 1227)
+
+
+Started GET "/api/v1/categories?search=jacket" for ::1 at 2024-05-03 23:47:29 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"search"=>"jacket"}
+  [1m[36mCategory Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%')[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.8ms | Allocations: 1226)
+
+
+Started GET "/api/v1/categories?search=jacket" for ::1 at 2024-05-03 23:47:29 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"search"=>"jacket"}
+  [1m[36mCategory Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%')[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.6ms | Allocations: 1226)
+
+
+Started GET "/api/v1/categories?search=jacket" for ::1 at 2024-05-03 23:47:30 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"search"=>"jacket"}
+  [1m[36mCategory Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%')[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.9ms | Allocations: 1226)
+
+
+Started GET "/api/v1/categories?search=jacket" for ::1 at 2024-05-03 23:47:30 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"search"=>"jacket"}
+  [1m[36mCategory Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%')[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.8ms | Allocations: 1226)
+
+
+Started GET "/api/v1/categorie/test" for ::1 at 2024-05-03 23:53:38 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/categorie/test"):
+  
+Started GET "/api/v1/category/test" for ::1 at 2024-05-03 23:53:49 +0800
+  
+SyntaxError (/Users/ipaymudev/Private/Project/sample/ruby/demo-commerce-api/app/controllers/api/v1/category_controller.rb:52: syntax error, unexpected `end'):
+  
+app/controllers/api/v1/category_controller.rb:52: syntax error, unexpected `end'
+Started GET "/api/v1/category/test" for ::1 at 2024-05-03 23:54:08 +0800
+Processing by Api::V1::CategoryController#get_by_uid as */*
+  Parameters: {"uid"=>"test"}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 138)
+
+
+  
+NameError (undefined local variable or method `uid' for an instance of Api::V1::CategoryController):
+  
+app/controllers/api/v1/category_controller.rb:28:in `get_by_uid'
+Started GET "/api/v1/category/test" for ::1 at 2024-05-03 23:54:31 +0800
+Processing by Api::V1::CategoryController#get_by_uid as */*
+  Parameters: {"uid"=>"test"}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:24:in `get_by_uid'
+Completed 404 Not Found in 54ms (ActiveRecord: 22.2ms | Allocations: 4723)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Category with 'id'=test):
+  
+app/repositories/category_repository.rb:24:in `get_by_uid'
+app/controllers/api/v1/category_controller.rb:28:in `get_by_uid'
+Started GET "/api/v1/category/test" for ::1 at 2024-05-03 23:54:41 +0800
+  
+SyntaxError (/Users/ipaymudev/Private/Project/sample/ruby/demo-commerce-api/app/controllers/api/v1/category_controller.rb:52: syntax error, unexpected `end'):
+  
+app/controllers/api/v1/category_controller.rb:52: syntax error, unexpected `end'
+Started GET "/api/v1/category/test" for ::1 at 2024-05-03 23:54:57 +0800
+Processing by Api::V1::CategoryController#get_by_uid as */*
+  Parameters: {"uid"=>"test"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:24:in `get_by_uid'
+Completed 400 Bad Request in 25ms (Views: 0.2ms | ActiveRecord: 16.1ms | Allocations: 1346)
+
+
+Started GET "/api/v1/category/876f7fb1-e7ec-496e-a81a-d4cee1a384b5" for ::1 at 2024-05-03 23:55:16 +0800
+Processing by Api::V1::CategoryController#get_by_uid as */*
+  Parameters: {"uid"=>"876f7fb1-e7ec-496e-a81a-d4cee1a384b5"}
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 876], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:24:in `get_by_uid'
+Completed 400 Bad Request in 6ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 492)
+
+
+Started GET "/api/v1/category/876f7fb1-e7ec-496e-a81a-d4cee1a384b5" for ::1 at 2024-05-03 23:56:25 +0800
+Processing by Api::V1::CategoryController#get_by_uid as */*
+  Parameters: {"uid"=>"876f7fb1-e7ec-496e-a81a-d4cee1a384b5"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["id", 876], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:24:in `get_by_uid'
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 9.9ms | Allocations: 1548)
+
+
+  
+NoMethodError (undefined method `json' for an instance of Api::V1::CategoryController):
+  
+app/controllers/api/v1/category_controller.rb:29:in `get_by_uid'
+Started GET "/api/v1/category/876f7fb1-e7ec-496e-a81a-d4cee1a384b5" for ::1 at 2024-05-03 23:56:45 +0800
+Processing by Api::V1::CategoryController#get_by_uid as */*
+  Parameters: {"uid"=>"876f7fb1-e7ec-496e-a81a-d4cee1a384b5"}
+  [1m[36mCategory Load (2.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["id", 876], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:24:in `get_by_uid'
+Completed 200 OK in 14ms (Views: 0.2ms | ActiveRecord: 10.3ms | Allocations: 1500)
+
+
+Started GET "/api/v1/category/876f7fb1-e7ec-496e-a81a-d4cee1a384b5" for ::1 at 2024-05-03 23:56:54 +0800
+Processing by Api::V1::CategoryController#get_by_uid as */*
+  Parameters: {"uid"=>"876f7fb1-e7ec-496e-a81a-d4cee1a384b5"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["id", 876], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:24:in `get_by_uid'
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 9.2ms | Allocations: 1498)
+
+
+Started GET "/api/v1/category/876f7fb1-e7ec-496e-a81a-d4cee1a384b5" for ::1 at 2024-05-03 23:57:12 +0800
+Processing by Api::V1::CategoryController#get_by_uid as */*
+  Parameters: {"uid"=>"876f7fb1-e7ec-496e-a81a-d4cee1a384b5"}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["uid", "876f7fb1-e7ec-496e-a81a-d4cee1a384b5"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:24:in `get_by_uid'
+Completed 200 OK in 16ms (Views: 0.4ms | ActiveRecord: 9.7ms | Allocations: 3908)
+
+
+Started GET "/api/v1/category/876f7fb1-e7ec-496e-a81a-d4cee1a384b5" for ::1 at 2024-05-03 23:57:22 +0800
+Processing by Api::V1::CategoryController#get_by_uid as */*
+  Parameters: {"uid"=>"876f7fb1-e7ec-496e-a81a-d4cee1a384b5"}
+Completed 400 Bad Request in 9ms (Views: 0.2ms | ActiveRecord: 6.4ms | Allocations: 838)
+
+
+Started GET "/api/v1/category/876f7fb1-e7ec-496e-a81a-d4cee1a384b5" for ::1 at 2024-05-03 23:57:30 +0800
+Processing by Api::V1::CategoryController#get_by_uid as */*
+  Parameters: {"uid"=>"876f7fb1-e7ec-496e-a81a-d4cee1a384b5"}
+Completed 400 Bad Request in 3ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 122)
+
+
+Started GET "/api/v1/category/876f7fb1-e7ec-496e-a81a-d4cee1a384b5" for ::1 at 2024-05-03 23:57:36 +0800
+Processing by Api::V1::CategoryController#get_by_uid as */*
+  Parameters: {"uid"=>"876f7fb1-e7ec-496e-a81a-d4cee1a384b5"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["uid", "876f7fb1-e7ec-496e-a81a-d4cee1a384b5"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:24:in `get_by_uid'
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 10.1ms | Allocations: 3886)
+
+
+Started GET "/api/v1/category/876f7fb1-e7ec-496e-a81a-d4cee1a384b51" for ::1 at 2024-05-03 23:57:42 +0800
+Processing by Api::V1::CategoryController#get_by_uid as */*
+  Parameters: {"uid"=>"876f7fb1-e7ec-496e-a81a-d4cee1a384b51"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["uid", "876f7fb1-e7ec-496e-a81a-d4cee1a384b51"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:24:in `get_by_uid'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 625)
+
+
+Started GET "/api/v1/category/876f7fb1-e7ec-496e-a81a-d4cee1a384b51" for ::1 at 2024-05-03 23:59:12 +0800
+Processing by Api::V1::CategoryController#get_by_uid as */*
+  Parameters: {"uid"=>"876f7fb1-e7ec-496e-a81a-d4cee1a384b51"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["uid", "876f7fb1-e7ec-496e-a81a-d4cee1a384b51"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:24:in `get_by_uid'
+Completed 400 Bad Request in 18ms (Views: 0.2ms | ActiveRecord: 12.8ms | Allocations: 1498)
+
+
+Started GET "/api/v1/category/876f7fb1-e7ec-496e-a81a-d4cee1a384b5" for ::1 at 2024-05-03 23:59:16 +0800
+Processing by Api::V1::CategoryController#get_by_uid as */*
+  Parameters: {"uid"=>"876f7fb1-e7ec-496e-a81a-d4cee1a384b5"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["uid", "876f7fb1-e7ec-496e-a81a-d4cee1a384b5"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:24:in `get_by_uid'
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 2998)
+
+
+Started GET "/api/v1/category/876f7fb1-e7ec-496e-a81a-d4cee1a384b5" for ::1 at 2024-05-03 23:59:20 +0800
+Processing by Api::V1::CategoryController#get_by_uid as */*
+  Parameters: {"uid"=>"876f7fb1-e7ec-496e-a81a-d4cee1a384b5"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["uid", "876f7fb1-e7ec-496e-a81a-d4cee1a384b5"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:24:in `get_by_uid'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 689)
+
+
+Started GET "/api/v1/category/876f7fb1-e7ec-496e-a81a-d4cee1a384b5" for ::1 at 2024-05-03 23:59:20 +0800
+Processing by Api::V1::CategoryController#get_by_uid as */*
+  Parameters: {"uid"=>"876f7fb1-e7ec-496e-a81a-d4cee1a384b5"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["uid", "876f7fb1-e7ec-496e-a81a-d4cee1a384b5"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:24:in `get_by_uid'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 689)
+
+
+Started GET "/api/v1/category/876f7fb1-e7ec-496e-a81a-d4cee1a384b5" for ::1 at 2024-05-03 23:59:21 +0800
+Processing by Api::V1::CategoryController#get_by_uid as */*
+  Parameters: {"uid"=>"876f7fb1-e7ec-496e-a81a-d4cee1a384b5"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["uid", "876f7fb1-e7ec-496e-a81a-d4cee1a384b5"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:24:in `get_by_uid'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 689)
+
+
+Started GET "/api/v1/category/876f7fb1-e7ec-496e-a81a-d4cee1a384b5" for ::1 at 2024-05-03 23:59:21 +0800
+Processing by Api::V1::CategoryController#get_by_uid as */*
+  Parameters: {"uid"=>"876f7fb1-e7ec-496e-a81a-d4cee1a384b5"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["uid", "876f7fb1-e7ec-496e-a81a-d4cee1a384b5"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:24:in `get_by_uid'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 689)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 00:04:21 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"Jacket", "description"=>"All of Jacket", "category"=>{"name"=>"Jacket", "description"=>"All of Jacket"}}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 10.5ms | Allocations: 2664)
+
+
+  
+NoMethodError (undefined method `uid=' for class Category):
+  
+app/repositories/category_repository.rb:33:in `store'
+app/controllers/api/v1/category_controller.rb:42:in `store'
+Started POST "/api/v1/category" for ::1 at 2024-05-04 00:05:37 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"Jacket", "description"=>"All of Jacket", "category"=>{"name"=>"Jacket", "description"=>"All of Jacket"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/repositories/category_repository.rb:34:in `store'
+  [1m[36mCategory Create (26.5ms)[0m  [1m[32mINSERT INTO "categories" ("uid", "created_at", "updated_at", "name", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["uid", "70e2a4a5-3f8a-43b2-9ea0-848cbd29f09b"], ["created_at", "2024-05-03 16:05:37.937370"], ["updated_at", "2024-05-03 16:05:37.937370"], ["name", "Jacket"], ["description", "All of Jacket"]]
+  ↳ app/repositories/category_repository.rb:34:in `store'
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/repositories/category_repository.rb:34:in `store'
+Completed 201 Created in 38ms (Views: 0.2ms | ActiveRecord: 40.4ms | Allocations: 4680)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 00:05:57 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"Jeans", "description"=>"All of Jacket", "category"=>{"name"=>"Jeans", "description"=>"All of Jacket"}}
+  [1m[36mTRANSACTION (11.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/repositories/category_repository.rb:34:in `store'
+  [1m[36mCategory Create (14.7ms)[0m  [1m[32mINSERT INTO "categories" ("uid", "created_at", "updated_at", "name", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["uid", "9c3ebc88-626a-484f-9955-d4de39f78cd8"], ["created_at", "2024-05-03 16:05:57.523525"], ["updated_at", "2024-05-03 16:05:57.523525"], ["name", "Jeans"], ["description", "All of Jacket"]]
+  ↳ app/repositories/category_repository.rb:34:in `store'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/repositories/category_repository.rb:34:in `store'
+Completed 201 Created in 22ms (Views: 0.4ms | ActiveRecord: 26.8ms | Allocations: 1643)
+
+
+Started GET "/api/v1/categories/all" for ::1 at 2024-05-04 00:06:00 +0800
+Processing by Api::V1::CategoryController#fetch_all as */*
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:8:in `fetch_all'
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.7ms | Allocations: 956)
+
+
+Started GET "/api/v1/categories/all" for ::1 at 2024-05-04 00:06:17 +0800
+Processing by Api::V1::CategoryController#fetch_all as */*
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:8:in `fetch_all'
+Completed 200 OK in 15ms (Views: 4.6ms | ActiveRecord: 9.2ms | Allocations: 3879)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 00:06:20 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"Jeans", "description"=>"All of Jacket", "category"=>{"name"=>"Jeans", "description"=>"All of Jacket"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/repositories/category_repository.rb:34:in `store'
+  [1m[36mCategory Create (1.1ms)[0m  [1m[32mINSERT INTO "categories" ("uid", "created_at", "updated_at", "name", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["uid", "f38bc1d8-b2cd-4b86-a540-8a5e3801aea9"], ["created_at", "2024-05-03 16:06:20.790873"], ["updated_at", "2024-05-03 16:06:20.790873"], ["name", "Jeans"], ["description", "All of Jacket"]]
+  ↳ app/repositories/category_repository.rb:34:in `store'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/repositories/category_repository.rb:34:in `store'
+Completed 201 Created in 5ms (Views: 0.2ms | ActiveRecord: 1.8ms | Allocations: 1827)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 00:06:31 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"Jeans", "description"=>"All of Jacket", "category"=>{"name"=>"Jeans", "description"=>"All of Jacket"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/repositories/category_repository.rb:34:in `store'
+  [1m[36mCategory Create (1.2ms)[0m  [1m[32mINSERT INTO "categories" ("uid", "created_at", "updated_at", "name", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["uid", "6c859131-5f79-4d67-9e55-9b5fd4451c03"], ["created_at", "2024-05-03 16:06:31.522241"], ["updated_at", "2024-05-03 16:06:31.522241"], ["name", "Jeans"], ["description", "All of Jacket"]]
+  ↳ app/repositories/category_repository.rb:34:in `store'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/repositories/category_repository.rb:34:in `store'
+Completed 201 Created in 15ms (Views: 0.2ms | ActiveRecord: 11.9ms | Allocations: 4269)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 00:06:35 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 201 Created in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 327)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 00:06:51 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 201 Created in 7ms (Views: 0.2ms | ActiveRecord: 8.5ms | Allocations: 2868)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 00:06:58 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"description"=>"All of Jacket", "category"=>{"description"=>"All of Jacket"}}
+Completed 201 Created in 5ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 276)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 00:07:37 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 6.8ms | Allocations: 177)
+
+
+  
+NoMethodError (undefined method `new' for nil):
+  
+app/repositories/category_repository.rb:32:in `store'
+app/controllers/api/v1/category_controller.rb:42:in `store'
+Started POST "/api/v1/category" for ::1 at 2024-05-04 00:10:03 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 35.2ms | Allocations: 179)
+
+
+  
+NameError (undefined local variable or method `params' for an instance of CategoryRepository):
+  
+app/repositories/category_repository.rb:54:in `category_store_request'
+app/repositories/category_repository.rb:32:in `store'
+app/controllers/api/v1/category_controller.rb:42:in `store'
+Started POST "/api/v1/category" for ::1 at 2024-05-04 00:30:17 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 15.0ms | Allocations: 137)
+
+
+  
+NameError (uninitialized constant Api::V1::CategoryController::CategoryStoreRequest):
+  
+app/controllers/api/v1/category_controller.rb:41:in `store'
+Started POST "/api/v1/category" for ::1 at 2024-05-04 00:30:49 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 17.5ms | Allocations: 136)
+
+
+  
+NameError (uninitialized constant Api::V1::CategoryController::CategoryStoreRequest):
+  
+app/controllers/api/v1/category_controller.rb:41:in `store'
+Started POST "/api/v1/category" for ::1 at 2024-05-04 00:31:44 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 89)
+
+
+  
+NameError (uninitialized constant Api::V1::CategoryController::CategoryStoreRequest):
+  
+app/controllers/api/v1/category_controller.rb:41:in `store'
+Started POST "/api/v1/category" for ::1 at 2024-05-04 00:32:35 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 89)
+
+
+  
+NameError (uninitialized constant Api::V1::CategoryController::CategoryStoreRequest):
+  
+app/controllers/api/v1/category_controller.rb:41:in `store'
+Started POST "/api/v1/category" for ::1 at 2024-05-04 00:33:05 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 6.7ms | Allocations: 136)
+
+
+  
+NameError (uninitialized constant Api::V1::CategoryController::CategoryStoreRequest):
+  
+app/controllers/api/v1/category_controller.rb:41:in `store'
+Started POST "/api/v1/category" for ::1 at 2024-05-04 00:33:09 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"asd", "description"=>"All of Jacket", "category"=>{"name"=>"asd", "description"=>"All of Jacket"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 89)
+
+
+  
+NameError (uninitialized constant Api::V1::CategoryController::CategoryStoreRequest):
+  
+app/controllers/api/v1/category_controller.rb:41:in `store'
+Started POST "/api/v1/category" for ::1 at 2024-05-04 00:33:52 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"asd", "description"=>"All of Jacket", "category"=>{"name"=>"asd", "description"=>"All of Jacket"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 89)
+
+
+  
+NameError (uninitialized constant Api::V1::CategoryController::CategoryStoreRequest):
+  
+app/controllers/api/v1/category_controller.rb:41:in `store'
+Started POST "/api/v1/category" for ::1 at 2024-05-04 00:34:39 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"asd", "description"=>"All of Jacket", "category"=>{"name"=>"asd", "description"=>"All of Jacket"}}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 89)
+
+
+  
+NameError (uninitialized constant Api::V1::CategoryController::CategoryStoreRequest):
+  
+app/controllers/api/v1/category_controller.rb:41:in `store'
+Started POST "/api/v1/category" for ::1 at 2024-05-04 00:36:22 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"asd", "description"=>"All of Jacket", "category"=>{"name"=>"asd", "description"=>"All of Jacket"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 28.2ms | Allocations: 136)
+
+
+  
+NameError (uninitialized constant Api::V1::CategoryController::CategoryStoreRequest):
+  
+app/controllers/api/v1/category_controller.rb:41:in `store'
+Started POST "/api/v1/category" for ::1 at 2024-05-04 00:45:04 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"asd", "description"=>"All of Jacket", "category"=>{"name"=>"asd", "description"=>"All of Jacket"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 32.4ms | Allocations: 136)
+
+
+  
+NameError (uninitialized constant Api::V1::CategoryController::CategoryStoreRequest):
+  
+app/controllers/api/v1/category_controller.rb:41:in `store'
+Started GET "/api/v1/categories/all" for ::1 at 2024-05-04 00:48:13 +0800
+Processing by Api::V1::CategoryController#fetch_all as */*
+  [1m[36mCategory Load (4.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:8:in `fetch_all'
+Completed 200 OK in 32ms (Views: 7.3ms | ActiveRecord: 10.7ms | Allocations: 4376)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 00:50:07 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"asd", "description"=>"All of Jacket", "category"=>{"name"=>"asd", "description"=>"All of Jacket"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 6.8ms | Allocations: 136)
+
+
+  
+NameError (uninitialized constant Api::V1::CategoryController::CategoryStoreRequest):
+  
+app/controllers/api/v1/category_controller.rb:41:in `store'
+Started POST "/api/v1/category" for ::1 at 2024-05-04 00:50:50 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 7.3ms | Allocations: 136)
+
+
+  
+NameError (uninitialized constant Api::V1::CategoryController::CategoryStoreRequest):
+  
+app/controllers/api/v1/category_controller.rb:41:in `store'
+Started POST "/api/v1/category" for ::1 at 2024-05-04 00:50:51 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 89)
+
+
+  
+NameError (uninitialized constant Api::V1::CategoryController::CategoryStoreRequest):
+  
+app/controllers/api/v1/category_controller.rb:41:in `store'
+Started POST "/api/v1/category" for ::1 at 2024-05-04 00:53:47 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 6.1ms | Allocations: 175)
+
+
+  
+NoMethodError (undefined method `new' for nil):
+  
+app/controllers/api/v1/category_controller.rb:41:in `store'
+Started POST "/api/v1/category" for ::1 at 2024-05-04 00:54:14 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 5.3ms | Allocations: 136)
+
+
+  
+NameError (uninitialized constant Api::V1::CategoryController::CategoryStoreRequest):
+  
+app/controllers/api/v1/category_controller.rb:41:in `store'
+Started POST "/api/v1/category" for ::1 at 2024-05-04 00:55:51 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 18.3ms | Allocations: 136)
+
+
+  
+NameError (uninitialized constant Api::V1::CategoryController::CategoryStoreRequest):
+  
+app/controllers/api/v1/category_controller.rb:41:in `store'
+Started POST "/api/v1/category" for ::1 at 2024-05-04 00:57:10 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 17.2ms | Allocations: 136)
+
+
+  
+NameError (uninitialized constant Api::V1::CategoryController::CategoryStoreRequest):
+  
+app/controllers/api/v1/category_controller.rb:41:in `store'
+Started POST "/api/v1/category" for ::1 at 2024-05-04 00:58:35 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 16.9ms | Allocations: 136)
+
+
+  
+NameError (uninitialized constant Api::V1::CategoryController::CategoryStoreRequest):
+  
+app/controllers/api/v1/category_controller.rb:41:in `store'
+Started POST "/api/v1/category" for ::1 at 2024-05-04 00:58:49 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 16.7ms | Allocations: 2382)
+
+
+  
+NameError (uninitialized constant Requests):
+  
+app/requests/category_store_request.rb:1:in `<main>'
+app/controllers/api/v1/category_controller.rb:41:in `store'
+Started POST "/api/v1/category" for ::1 at 2024-05-04 00:59:16 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 6.1ms | Allocations: 1627)
+
+
+  
+NameError (undefined local variable or method `category_params' for an instance of Api::V1::CategoryController):
+  
+app/controllers/api/v1/category_controller.rb:53:in `store'
+Started POST "/api/v1/category" for ::1 at 2024-05-04 00:59:47 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 400 Bad Request in 6ms (Views: 0.2ms | ActiveRecord: 17.4ms | Allocations: 2797)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 00:59:49 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 400 Bad Request in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 725)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 01:00:08 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 400 Bad Request in 3ms (Views: 0.1ms | ActiveRecord: 5.0ms | Allocations: 1746)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 01:00:33 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 400 Bad Request in 3ms (Views: 0.2ms | ActiveRecord: 6.9ms | Allocations: 1745)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 01:00:34 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 400 Bad Request in 4ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 727)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 01:00:42 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 400 Bad Request in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 726)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 01:00:43 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 400 Bad Request in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 726)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 01:00:43 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 400 Bad Request in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 726)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 01:00:44 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 400 Bad Request in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 726)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 01:00:44 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 400 Bad Request in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 726)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 01:01:14 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 400 Bad Request in 3ms (Views: 0.1ms | ActiveRecord: 4.0ms | Allocations: 1743)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 01:01:26 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 400 Bad Request in 4ms (Views: 0.2ms | ActiveRecord: 21.3ms | Allocations: 1741)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 01:01:28 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 400 Bad Request in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 726)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 01:01:28 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 400 Bad Request in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 726)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 01:01:29 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 400 Bad Request in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 726)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 01:01:31 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 400 Bad Request in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 727)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 01:01:32 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 400 Bad Request in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 726)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 01:01:32 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 400 Bad Request in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 726)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 01:01:33 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 400 Bad Request in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 726)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 01:01:34 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 400 Bad Request in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 726)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 01:01:38 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 400 Bad Request in 3ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 726)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 01:01:44 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 400 Bad Request in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 726)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 01:01:44 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 400 Bad Request in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 726)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 01:01:45 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Jacket", "category"=>{"name"=>"", "description"=>"All of Jacket"}}
+Completed 400 Bad Request in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 726)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 01:01:54 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"Shoes", "description"=>"All of Shoes", "category"=>{"name"=>"Shoes", "description"=>"All of Shoes"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 159)
+
+
+  
+NoMethodError (undefined method `attributes' for an instance of CategoryStoreRequest):
+  
+app/controllers/api/v1/category_controller.rb:44:in `store'
+Started POST "/api/v1/category" for ::1 at 2024-05-04 01:02:09 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"Shoes", "description"=>"All of Shoes", "category"=>{"name"=>"Shoes", "description"=>"All of Shoes"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 143)
+
+
+  
+NoMethodError (undefined method `attributes' for an instance of CategoryStoreRequest):
+  
+app/controllers/api/v1/category_controller.rb:44:in `store'
+Started POST "/api/v1/category" for ::1 at 2024-05-04 01:02:34 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"Shoes", "description"=>"All of Shoes", "category"=>{"name"=>"Shoes", "description"=>"All of Shoes"}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 3.5ms | Allocations: 992)
+
+
+  
+NameError (undefined local variable or method `category_store_request' for an instance of CategoryRepository):
+  
+app/repositories/category_repository.rb:32:in `store'
+app/controllers/api/v1/category_controller.rb:44:in `store'
+Started POST "/api/v1/category" for ::1 at 2024-05-04 01:02:57 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"Shoes", "description"=>"All of Shoes", "category"=>{"name"=>"Shoes", "description"=>"All of Shoes"}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 5.5ms | Allocations: 963)
+
+
+  
+NoMethodError (undefined method `attributes' for an instance of CategoryStoreRequest):
+  
+app/controllers/api/v1/category_controller.rb:44:in `store'
+Started POST "/api/v1/category" for ::1 at 2024-05-04 01:03:15 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"Shoes", "description"=>"All of Shoes", "category"=>{"name"=>"Shoes", "description"=>"All of Shoes"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/repositories/category_repository.rb:34:in `store'
+  [1m[36mCategory Create (6.3ms)[0m  [1m[32mINSERT INTO "categories" ("uid", "created_at", "updated_at", "name", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["uid", "5c6ff49d-b686-46f8-b65c-8e28823b0eb4"], ["created_at", "2024-05-03 17:03:15.545190"], ["updated_at", "2024-05-03 17:03:15.545190"], ["name", "Shoes"], ["description", "All of Shoes"]]
+  ↳ app/repositories/category_repository.rb:34:in `store'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/repositories/category_repository.rb:34:in `store'
+Completed 201 Created in 31ms (Views: 0.2ms | ActiveRecord: 20.0ms | Allocations: 12052)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 01:03:18 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"Shoes", "description"=>"All of Shoes", "category"=>{"name"=>"Shoes", "description"=>"All of Shoes"}}
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/repositories/category_repository.rb:34:in `store'
+  [1m[36mCategory Create (1.9ms)[0m  [1m[32mINSERT INTO "categories" ("uid", "created_at", "updated_at", "name", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["uid", "1143154b-3380-47d9-b571-b0329fddd94e"], ["created_at", "2024-05-03 17:03:18.311961"], ["updated_at", "2024-05-03 17:03:18.311961"], ["name", "Shoes"], ["description", "All of Shoes"]]
+  ↳ app/repositories/category_repository.rb:34:in `store'
+  [1m[36mTRANSACTION (11.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/repositories/category_repository.rb:34:in `store'
+Completed 201 Created in 17ms (Views: 0.6ms | ActiveRecord: 13.8ms | Allocations: 1701)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 01:03:21 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"", "description"=>"All of Shoes", "category"=>{"name"=>"", "description"=>"All of Shoes"}}
+Completed 400 Bad Request in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 843)
+
+
+Started POST "/api/v1/category" for ::1 at 2024-05-04 01:03:26 +0800
+Processing by Api::V1::CategoryController#store as */*
+  Parameters: {"name"=>"Shoes", "description"=>"All of Shoes", "category"=>{"name"=>"Shoes", "description"=>"All of Shoes"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/repositories/category_repository.rb:34:in `store'
+  [1m[36mCategory Create (12.5ms)[0m  [1m[32mINSERT INTO "categories" ("uid", "created_at", "updated_at", "name", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["uid", "b2b37591-c9eb-48ab-b95c-aa4260531eaa"], ["created_at", "2024-05-03 17:03:26.241361"], ["updated_at", "2024-05-03 17:03:26.241361"], ["name", "Shoes"], ["description", "All of Shoes"]]
+  ↳ app/repositories/category_repository.rb:34:in `store'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/repositories/category_repository.rb:34:in `store'
+Completed 201 Created in 16ms (Views: 0.3ms | ActiveRecord: 13.1ms | Allocations: 1701)
+
+
+Started GET "/api/v1/category/876f7fb1-e7ec-496e-a81a-d4cee1a384b5" for ::1 at 2024-05-04 01:03:45 +0800
+Processing by Api::V1::CategoryController#get_by_uid as */*
+  Parameters: {"uid"=>"876f7fb1-e7ec-496e-a81a-d4cee1a384b5"}
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 ORDER BY "categories"."id" ASC LIMIT $2[0m  [["uid", "876f7fb1-e7ec-496e-a81a-d4cee1a384b5"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:24:in `get_by_uid'
+Completed 200 OK in 48ms (Views: 1.4ms | ActiveRecord: 1.2ms | Allocations: 3499)
+
+
+Started GET "/api/v1/category/876f7fb1-e7ec-496e-a81a-d4cee1a384b5" for ::1 at 2024-05-04 01:06:12 +0800
+Processing by Api::V1::CategoryController#get_by_uid as */*
+  Parameters: {"uid"=>"876f7fb1-e7ec-496e-a81a-d4cee1a384b5"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "876f7fb1-e7ec-496e-a81a-d4cee1a384b5"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:24:in `get_by_uid'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 6.6ms | Allocations: 3749)
+
+
+Started DELETE "/api/v1/category/:uid" for ::1 at 2024-05-04 01:13:09 +0800
+Processing by Api::V1::CategoryController#delete_by_uid as */*
+  Parameters: {"uid"=>":uid"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", ":uid"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:32:in `delete_by_uid'
+Completed 400 Bad Request in 37ms (Views: 0.2ms | ActiveRecord: 18.4ms | Allocations: 3979)
+
+
+Started GET "/api/v1/categories/all" for ::1 at 2024-05-04 01:13:15 +0800
+Processing by Api::V1::CategoryController#fetch_all as */*
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:8:in `fetch_all'
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.5ms | Allocations: 3456)
+
+
+Started DELETE "/api/v1/category/b2b37591-c9eb-48ab-b95c-aa4260531eaa" for ::1 at 2024-05-04 01:13:25 +0800
+Processing by Api::V1::CategoryController#delete_by_uid as */*
+  Parameters: {"uid"=>"b2b37591-c9eb-48ab-b95c-aa4260531eaa"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "b2b37591-c9eb-48ab-b95c-aa4260531eaa"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:32:in `delete_by_uid'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/repositories/category_repository.rb:35:in `delete_by_uid'
+  [1m[36mCategory Destroy (8.6ms)[0m  [1m[31mDELETE FROM "categories" WHERE "categories"."id" = $1[0m  [["id", 9]]
+  ↳ app/repositories/category_repository.rb:35:in `delete_by_uid'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/repositories/category_repository.rb:35:in `delete_by_uid'
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 9.8ms | Allocations: 1843)
+
+
+Started DELETE "/api/v1/category/b2b37591-c9eb-48ab-b95c-aa4260531eaa" for ::1 at 2024-05-04 01:13:39 +0800
+Processing by Api::V1::CategoryController#delete_by_uid as */*
+  Parameters: {"uid"=>"b2b37591-c9eb-48ab-b95c-aa4260531eaa"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "b2b37591-c9eb-48ab-b95c-aa4260531eaa"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:32:in `delete_by_uid'
+Completed 400 Bad Request in 30ms (Views: 0.2ms | ActiveRecord: 27.2ms | Allocations: 1264)
+
+
+Started GET "/api/v1/categories/all" for ::1 at 2024-05-04 01:13:46 +0800
+Processing by Api::V1::CategoryController#fetch_all as */*
+  [1m[36mCategory Load (1.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:8:in `fetch_all'
+Completed 200 OK in 11ms (Views: 5.7ms | ActiveRecord: 5.6ms | Allocations: 3489)
+
+
+Started DELETE "/api/v1/category/5c6ff49d-b686-46f8-b65c-8e28823b0eb4" for ::1 at 2024-05-04 01:13:56 +0800
+Processing by Api::V1::CategoryController#delete_by_uid as */*
+  Parameters: {"uid"=>"5c6ff49d-b686-46f8-b65c-8e28823b0eb4"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "5c6ff49d-b686-46f8-b65c-8e28823b0eb4"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:32:in `delete_by_uid'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/repositories/category_repository.rb:35:in `delete_by_uid'
+  [1m[36mCategory Destroy (1.0ms)[0m  [1m[31mDELETE FROM "categories" WHERE "categories"."id" = $1[0m  [["id", 7]]
+  ↳ app/repositories/category_repository.rb:35:in `delete_by_uid'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/repositories/category_repository.rb:35:in `delete_by_uid'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.7ms | Allocations: 1756)
+
+
+Started GET "/api/v1/categories?search=jacket" for ::1 at 2024-05-04 01:14:12 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"search"=>"jacket"}
+  [1m[36mCategory Count (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%')[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 13ms (Views: 3.0ms | ActiveRecord: 7.8ms | Allocations: 4639)
+
+
+Started GET "/api/v1/categories/all" for ::1 at 2024-05-04 01:14:15 +0800
+Processing by Api::V1::CategoryController#fetch_all as */*
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:8:in `fetch_all'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.5ms | Allocations: 1014)
+
+
+Started DELETE "/api/v1/category/1143154b-3380-47d9-b571-b0329fddd94e" for ::1 at 2024-05-04 01:14:23 +0800
+Processing by Api::V1::CategoryController#delete_by_uid as */*
+  Parameters: {"uid"=>"1143154b-3380-47d9-b571-b0329fddd94e"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "1143154b-3380-47d9-b571-b0329fddd94e"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:32:in `delete_by_uid'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/repositories/category_repository.rb:35:in `delete_by_uid'
+  [1m[36mCategory Destroy (1.2ms)[0m  [1m[31mDELETE FROM "categories" WHERE "categories"."id" = $1[0m  [["id", 8]]
+  ↳ app/repositories/category_repository.rb:35:in `delete_by_uid'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/repositories/category_repository.rb:35:in `delete_by_uid'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 1.8ms | Allocations: 1861)
+
+
+Started GET "/api/v1/categories/all" for ::1 at 2024-05-04 01:14:59 +0800
+Processing by Api::V1::CategoryController#fetch_all as */*
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:8:in `fetch_all'
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.8ms | Allocations: 957)
+
+
+Started GET "/api/v1/categories/all" for ::1 at 2024-05-04 01:24:30 +0800
+Processing by Api::V1::CategoryController#fetch_all as */*
+  [1m[36mCategory Load (17.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:8:in `fetch_all'
+Completed 200 OK in 23ms (Views: -3.7ms | ActiveRecord: 25.4ms | Allocations: 6614)
+
+
+Started PUT "/api/v1/category/6c859131-5f79-4d67-9e55-9b5fd4451c03" for ::1 at 2024-05-04 01:24:57 +0800
+Processing by Api::V1::CategoryController#update as */*
+  Parameters: {"name"=>"Shoes Update", "description"=>"All of Shoes update", "uid"=>"6c859131-5f79-4d67-9e55-9b5fd4451c03", "category"=>{"name"=>"Shoes Update", "description"=>"All of Shoes update"}}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 960)
+
+
+  
+NoMethodError (undefined method `[]' for an instance of CategoryUpdateRequest):
+  
+app/controllers/api/v1/category_controller.rb:58:in `update'
+Started PUT "/api/v1/category/6c859131-5f79-4d67-9e55-9b5fd4451c03" for ::1 at 2024-05-04 01:25:46 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CategoryController#update as */*
+  Parameters: {"name"=>"Shoes Update", "description"=>"All of Shoes update", "uid"=>"6c859131-5f79-4d67-9e55-9b5fd4451c03", "category"=>{"name"=>"Shoes Update", "description"=>"All of Shoes update"}}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 11.9ms | Allocations: 3412)
+
+
+  
+NoMethodError (undefined method `[]' for an instance of CategoryUpdateRequest):
+  
+app/controllers/api/v1/category_controller.rb:58:in `update'
+Started PUT "/api/v1/category/6c859131-5f79-4d67-9e55-9b5fd4451c03" for ::1 at 2024-05-04 01:26:39 +0800
+Processing by Api::V1::CategoryController#update as */*
+  Parameters: {"name"=>"Shoes Update", "description"=>"All of Shoes update", "uid"=>"6c859131-5f79-4d67-9e55-9b5fd4451c03", "category"=>{"name"=>"Shoes Update", "description"=>"All of Shoes update"}}
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "6c859131-5f79-4d67-9e55-9b5fd4451c03"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:40:in `update_by_uid'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/repositories/category_repository.rb:43:in `update_by_uid'
+  [1m[36mCategory Update (1.9ms)[0m  [1m[33mUPDATE "categories" SET "updated_at" = $1, "name" = $2, "description" = $3 WHERE "categories"."id" = $4[0m  [["updated_at", "2024-05-03 17:26:39.502590"], ["name", "Shoes Update"], ["description", "All of Shoes update"], ["id", 6]]
+  ↳ app/repositories/category_repository.rb:43:in `update_by_uid'
+  [1m[36mTRANSACTION (12.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/repositories/category_repository.rb:43:in `update_by_uid'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "6c859131-5f79-4d67-9e55-9b5fd4451c03"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:40:in `update_by_uid'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "6c859131-5f79-4d67-9e55-9b5fd4451c03"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:24:in `get_by_uid'
+Completed 200 OK in 78ms (Views: 0.3ms | ActiveRecord: 50.2ms | Allocations: 15407)
+
+
+Started PUT "/api/v1/category/6c859131-5f79-4d67-9e55-9b5fd4451c03" for ::1 at 2024-05-04 01:26:45 +0800
+Processing by Api::V1::CategoryController#update as */*
+  Parameters: {"name"=>"Shoes Update", "description"=>"", "uid"=>"6c859131-5f79-4d67-9e55-9b5fd4451c03", "category"=>{"name"=>"Shoes Update", "description"=>""}}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "6c859131-5f79-4d67-9e55-9b5fd4451c03"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:40:in `update_by_uid'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/repositories/category_repository.rb:43:in `update_by_uid'
+  [1m[36mCategory Update (2.0ms)[0m  [1m[33mUPDATE "categories" SET "updated_at" = $1, "description" = $2 WHERE "categories"."id" = $3[0m  [["updated_at", "2024-05-03 17:26:45.535897"], ["description", ""], ["id", 6]]
+  ↳ app/repositories/category_repository.rb:43:in `update_by_uid'
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/repositories/category_repository.rb:43:in `update_by_uid'
+  [1m[36mCategory Load (10.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "6c859131-5f79-4d67-9e55-9b5fd4451c03"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:40:in `update_by_uid'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "6c859131-5f79-4d67-9e55-9b5fd4451c03"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:24:in `get_by_uid'
+Completed 200 OK in 25ms (Views: 0.2ms | ActiveRecord: 16.5ms | Allocations: 3029)
+
+
+Started PUT "/api/v1/category/6c859131-5f79-4d67-9e55-9b5fd4451c03" for ::1 at 2024-05-04 01:26:50 +0800
+Processing by Api::V1::CategoryController#update as */*
+  Parameters: {"name"=>"Shoes Update", "description"=>nil, "uid"=>"6c859131-5f79-4d67-9e55-9b5fd4451c03", "category"=>{"name"=>"Shoes Update", "description"=>nil}}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "6c859131-5f79-4d67-9e55-9b5fd4451c03"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:40:in `update_by_uid'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/repositories/category_repository.rb:43:in `update_by_uid'
+  [1m[36mCategory Update (1.4ms)[0m  [1m[33mUPDATE "categories" SET "updated_at" = $1, "description" = $2 WHERE "categories"."id" = $3[0m  [["updated_at", "2024-05-03 17:26:50.284303"], ["description", nil], ["id", 6]]
+  ↳ app/repositories/category_repository.rb:43:in `update_by_uid'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/repositories/category_repository.rb:43:in `update_by_uid'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "6c859131-5f79-4d67-9e55-9b5fd4451c03"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:40:in `update_by_uid'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "6c859131-5f79-4d67-9e55-9b5fd4451c03"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:24:in `get_by_uid'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 2.8ms | Allocations: 3022)
+
+
+Started PUT "/api/v1/category/6c859131-5f79-4d67-9e55-9b5fd4451c03" for ::1 at 2024-05-04 01:26:55 +0800
+Processing by Api::V1::CategoryController#update as */*
+  Parameters: {"name"=>"Shoes Update", "uid"=>"6c859131-5f79-4d67-9e55-9b5fd4451c03", "category"=>{"name"=>"Shoes Update"}}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "6c859131-5f79-4d67-9e55-9b5fd4451c03"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:40:in `update_by_uid'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "6c859131-5f79-4d67-9e55-9b5fd4451c03"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:40:in `update_by_uid'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "6c859131-5f79-4d67-9e55-9b5fd4451c03"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:24:in `get_by_uid'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 1425)
+
+
+Started PUT "/api/v1/category/6c859131-5f79-4d67-9e55-9b5fd4451c03" for ::1 at 2024-05-04 01:27:01 +0800
+Processing by Api::V1::CategoryController#update as */*
+  Parameters: {"name"=>"Shoes Update", "description"=>"test", "uid"=>"6c859131-5f79-4d67-9e55-9b5fd4451c03", "category"=>{"name"=>"Shoes Update", "description"=>"test"}}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "6c859131-5f79-4d67-9e55-9b5fd4451c03"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:40:in `update_by_uid'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/repositories/category_repository.rb:43:in `update_by_uid'
+  [1m[36mCategory Update (1.2ms)[0m  [1m[33mUPDATE "categories" SET "updated_at" = $1, "description" = $2 WHERE "categories"."id" = $3[0m  [["updated_at", "2024-05-03 17:27:01.217407"], ["description", "test"], ["id", 6]]
+  ↳ app/repositories/category_repository.rb:43:in `update_by_uid'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/repositories/category_repository.rb:43:in `update_by_uid'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "6c859131-5f79-4d67-9e55-9b5fd4451c03"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:40:in `update_by_uid'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "6c859131-5f79-4d67-9e55-9b5fd4451c03"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:24:in `get_by_uid'
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 2.0ms | Allocations: 3024)
+
+
+Started PUT "/api/v1/category/6c859131-5f79-4d67-9e55-9b5fd4451c03" for ::1 at 2024-05-04 01:27:03 +0800
+Processing by Api::V1::CategoryController#update as */*
+  Parameters: {"name"=>"Shoes Updates", "description"=>"test", "uid"=>"6c859131-5f79-4d67-9e55-9b5fd4451c03", "category"=>{"name"=>"Shoes Updates", "description"=>"test"}}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "6c859131-5f79-4d67-9e55-9b5fd4451c03"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:40:in `update_by_uid'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/repositories/category_repository.rb:43:in `update_by_uid'
+  [1m[36mCategory Update (1.5ms)[0m  [1m[33mUPDATE "categories" SET "updated_at" = $1, "name" = $2 WHERE "categories"."id" = $3[0m  [["updated_at", "2024-05-03 17:27:03.856282"], ["name", "Shoes Updates"], ["id", 6]]
+  ↳ app/repositories/category_repository.rb:43:in `update_by_uid'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/repositories/category_repository.rb:43:in `update_by_uid'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "6c859131-5f79-4d67-9e55-9b5fd4451c03"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:40:in `update_by_uid'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "6c859131-5f79-4d67-9e55-9b5fd4451c03"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:24:in `get_by_uid'
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 2.2ms | Allocations: 3011)
+
+
+Started PUT "/api/v1/category/6c859131-5f79-4d67-9e55-9b5fd4451c03" for ::1 at 2024-05-04 01:27:10 +0800
+Processing by Api::V1::CategoryController#update as */*
+  Parameters: {"description"=>"test update", "uid"=>"6c859131-5f79-4d67-9e55-9b5fd4451c03", "category"=>{"description"=>"test update"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 177)
+
+
+  
+NoMethodError (undefined method `errors' for an instance of ActionController::Parameters):
+  
+app/controllers/api/v1/category_controller.rb:66:in `update'
+Started PUT "/api/v1/category/6c859131-5f79-4d67-9e55-9b5fd4451c03" for ::1 at 2024-05-04 01:27:56 +0800
+Processing by Api::V1::CategoryController#update as */*
+  Parameters: {"description"=>"test update", "uid"=>"6c859131-5f79-4d67-9e55-9b5fd4451c03", "category"=>{"description"=>"test update"}}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 6.8ms | Allocations: 1025)
+
+
+  
+NoMethodError (undefined method `errors' for an instance of ActionController::Parameters):
+  
+app/controllers/api/v1/category_controller.rb:66:in `update'
+Started PUT "/api/v1/category/6c859131-5f79-4d67-9e55-9b5fd4451c03" for ::1 at 2024-05-04 01:28:30 +0800
+Processing by Api::V1::CategoryController#update as */*
+  Parameters: {"description"=>"test update", "uid"=>"6c859131-5f79-4d67-9e55-9b5fd4451c03", "category"=>{"description"=>"test update"}}
+Completed 400 Bad Request in 6ms (Views: 0.2ms | ActiveRecord: 6.2ms | Allocations: 2696)
+
+
+Started PUT "/api/v1/category/6c859131-5f79-4d67-9e55-9b5fd4451c03" for ::1 at 2024-05-04 01:28:39 +0800
+Processing by Api::V1::CategoryController#update as */*
+  Parameters: {"name"=>"Shoes Updates", "uid"=>"6c859131-5f79-4d67-9e55-9b5fd4451c03", "category"=>{"name"=>"Shoes Updates"}}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "6c859131-5f79-4d67-9e55-9b5fd4451c03"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:40:in `update_by_uid'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "6c859131-5f79-4d67-9e55-9b5fd4451c03"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:24:in `get_by_uid'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 2.3ms | Allocations: 3643)
+
+
+Started PUT "/api/v1/category/6c859131-5f79-4d67-9e55-9b5fd4451c03" for ::1 at 2024-05-04 01:28:46 +0800
+Processing by Api::V1::CategoryController#update as */*
+  Parameters: {"name"=>"Shoes Updates 12", "description"=>"yoloo", "uid"=>"6c859131-5f79-4d67-9e55-9b5fd4451c03", "category"=>{"name"=>"Shoes Updates 12", "description"=>"yoloo"}}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "6c859131-5f79-4d67-9e55-9b5fd4451c03"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:40:in `update_by_uid'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/repositories/category_repository.rb:43:in `update_by_uid'
+  [1m[36mCategory Update (1.6ms)[0m  [1m[33mUPDATE "categories" SET "updated_at" = $1, "name" = $2, "description" = $3 WHERE "categories"."id" = $4[0m  [["updated_at", "2024-05-03 17:28:46.479654"], ["name", "Shoes Updates 12"], ["description", "yoloo"], ["id", 6]]
+  ↳ app/repositories/category_repository.rb:43:in `update_by_uid'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/repositories/category_repository.rb:43:in `update_by_uid'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "6c859131-5f79-4d67-9e55-9b5fd4451c03"], ["LIMIT", 1]]
+  ↳ app/repositories/category_repository.rb:24:in `get_by_uid'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 3.0ms | Allocations: 2623)
+
+
+Started GET "/api/v1/categories?search=jacket" for ::1 at 2024-05-04 01:30:22 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"search"=>"jacket"}
+  [1m[36mCategory Count (3.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%')[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 12ms (Views: 2.9ms | ActiveRecord: 4.8ms | Allocations: 1607)
+
+
+Started GET "/api/v1/categories?search=jacket" for ::1 at 2024-05-04 01:30:24 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"search"=>"jacket"}
+  [1m[36mCategory Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%')[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:24:in `paginate'
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.6ms | Allocations: 1392)
+
+
+Started GET "/api/v1/categories/all" for ::1 at 2024-05-04 01:30:32 +0800
+Processing by Api::V1::CategoryController#fetch_all as */*
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:8:in `fetch_all'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.3ms | Allocations: 960)
+
+
+Started GET "/api/v1/categories/all" for ::1 at 2024-05-04 01:30:33 +0800
+Processing by Api::V1::CategoryController#fetch_all as */*
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:8:in `fetch_all'
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.5ms | Allocations: 958)
+
+
+Started GET "/api/v1/categories/all" for ::1 at 2024-05-04 01:30:33 +0800
+Processing by Api::V1::CategoryController#fetch_all as */*
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:8:in `fetch_all'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.4ms | Allocations: 958)
+
+
+Started GET "/api/v1/categories/all" for ::1 at 2024-05-04 01:30:35 +0800
+Processing by Api::V1::CategoryController#fetch_all as */*
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:8:in `fetch_all'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms | Allocations: 958)
+
+
+Started GET "/api/v1/categories/all" for ::1 at 2024-05-04 01:30:35 +0800
+Processing by Api::V1::CategoryController#fetch_all as */*
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:8:in `fetch_all'
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.6ms | Allocations: 958)
+
+
+Started GET "/api/v1/categories/all" for ::1 at 2024-05-04 01:30:51 +0800
+Processing by Api::V1::CategoryController#fetch_all as */*
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:8:in `fetch_all'
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.9ms | Allocations: 958)
+
+
+Started GET "/api/v1/categories/all" for ::1 at 2024-05-04 01:30:51 +0800
+Processing by Api::V1::CategoryController#fetch_all as */*
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:8:in `fetch_all'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.3ms | Allocations: 958)
+
+
+Started GET "/api/v1/categories/all" for ::1 at 2024-05-04 01:30:52 +0800
+Processing by Api::V1::CategoryController#fetch_all as */*
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:8:in `fetch_all'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms | Allocations: 958)
+
+
+Started GET "/api/v1/categories?search=jacket" for ::1 at 2024-05-04 01:31:19 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"search"=>"jacket"}
+  [1m[36mCategory Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%')[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%jacket%' OR LOWER(description) LIKE '%jacket%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:22:in `paginate'
+Completed 200 OK in 37ms (Views: 11.8ms | ActiveRecord: 21.3ms | Allocations: 4513)
+
+
+Started GET "/api/v1/categories?search=pppp" for ::1 at 2024-05-04 01:31:27 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"search"=>"pppp"}
+  [1m[36mCategory Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" WHERE (LOWER(name) LIKE '%pppp%' OR LOWER(description) LIKE '%pppp%')[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%pppp%' OR LOWER(description) LIKE '%pppp%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:22:in `paginate'
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.7ms | Allocations: 1168)
+
+
+Started GET "/api/v1/categories?search=shoe" for ::1 at 2024-05-04 01:31:32 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"search"=>"shoe"}
+  [1m[36mCategory Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" WHERE (LOWER(name) LIKE '%shoe%' OR LOWER(description) LIKE '%shoe%')[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%shoe%' OR LOWER(description) LIKE '%shoe%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:22:in `paginate'
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.8ms | Allocations: 1234)
+
+
+Started GET "/api/v1/categories?search=shoe" for ::1 at 2024-05-04 01:31:46 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"search"=>"shoe"}
+  [1m[36mCategory Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" WHERE (LOWER(name) LIKE '%shoe%' OR LOWER(description) LIKE '%shoe%')[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%shoe%' OR LOWER(description) LIKE '%shoe%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:22:in `paginate'
+Completed 200 OK in 73ms (Views: 8.8ms | ActiveRecord: 24.8ms | Allocations: 17754)
+
+
+Started GET "/api/v1/categories?search=shoe&description=ssss" for ::1 at 2024-05-04 01:31:58 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"search"=>"shoe", "description"=>"ssss"}
+  [1m[36mCategory Count (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" WHERE (LOWER(name) LIKE '%shoe%' OR LOWER(description) LIKE '%shoe%')[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE (LOWER(name) LIKE '%shoe%' OR LOWER(description) LIKE '%shoe%') ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:22:in `paginate'
+Completed 200 OK in 8ms (Views: 2.3ms | ActiveRecord: 1.8ms | Allocations: 1250)
+
+
+Started GET "/api/v1/categories?search=shoe&uid=ssss" for ::1 at 2024-05-04 01:32:07 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"search"=>"shoe", "uid"=>"ssss"}
+  [1m[36mCategory Count (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories" WHERE "categories"."uid" = $1 AND (LOWER(name) LIKE '%shoe%' OR LOWER(description) LIKE '%shoe%')[0m  [["uid", "ssss"]]
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 AND (LOWER(name) LIKE '%shoe%' OR LOWER(description) LIKE '%shoe%') ORDER BY id DESC LIMIT $2 OFFSET $3[0m  [["uid", "ssss"], ["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:22:in `paginate'
+Completed 200 OK in 8ms (Views: 1.4ms | ActiveRecord: 1.3ms | Allocations: 1635)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-04 01:32:23 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  [1m[36mCategory Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:22:in `paginate'
+Completed 200 OK in 8ms (Views: 3.8ms | ActiveRecord: 1.1ms | Allocations: 1436)
+
+
+Started GET "/api/v1/categories?order_by=id&order_direction=asc" for ::1 at 2024-05-04 01:32:36 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"order_by"=>"id", "order_direction"=>"asc"}
+  [1m[36mCategory Count (2.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:22:in `paginate'
+Completed 200 OK in 11ms (Views: 2.2ms | ActiveRecord: 3.0ms | Allocations: 1436)
+
+
+Started GET "/api/v1/categories?order_by=id&order_by_direction=asc" for ::1 at 2024-05-04 01:32:40 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"order_by"=>"id", "order_by_direction"=>"asc"}
+  [1m[36mCategory Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:22:in `paginate'
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.7ms | Allocations: 1422)
+
+
+Started GET "/api/v1/categories?sort_field=id&sort_direction=asc" for ::1 at 2024-05-04 01:32:52 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  Parameters: {"sort_field"=>"id", "sort_direction"=>"asc"}
+  [1m[36mCategory Count (12.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY id asc LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:22:in `paginate'
+Completed 200 OK in 20ms (Views: 3.6ms | ActiveRecord: 13.0ms | Allocations: 1420)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-04 01:32:57 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  [1m[36mCategory Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:22:in `paginate'
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.6ms | Allocations: 1422)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-04 01:32:57 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  [1m[36mCategory Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:22:in `paginate'
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.6ms | Allocations: 1422)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-04 01:32:57 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  [1m[36mCategory Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:22:in `paginate'
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.5ms | Allocations: 1422)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-04 01:32:58 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  [1m[36mCategory Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:22:in `paginate'
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.8ms | Allocations: 1422)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-04 01:32:58 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  [1m[36mCategory Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:22:in `paginate'
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.5ms | Allocations: 1422)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-04 01:32:59 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  [1m[36mCategory Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:22:in `paginate'
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.6ms | Allocations: 1422)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-04 01:39:45 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CategoryController#paginate as */*
+  [1m[36mCategory Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:22:in `paginate'
+Completed 200 OK in 68ms (Views: 9.8ms | ActiveRecord: 22.5ms | Allocations: 17896)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-04 01:39:46 +0800
+Processing by Api::V1::CategoryController#paginate as */*
+  [1m[36mCategory Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:22:in `paginate'
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.6ms | Allocations: 1439)
+
+
+Started GET "/api/v1/categories" for ::1 at 2024-05-04 01:40:24 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::CategoryController#paginate as */*
+  [1m[36mCategory Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "categories"[0m
+  ↳ app/repositories/category_repository.rb:12:in `fetch_paginate'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY id DESC LIMIT $1 OFFSET $2[0m  [["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/category_controller.rb:22:in `paginate'
+Completed 200 OK in 43ms (Views: 8.8ms | ActiveRecord: 15.8ms | Allocations: 17869)
+
+
+Started GET "/api/v1/categories/all" for ::1 at 2024-05-04 01:40:26 +0800
+Processing by Api::V1::CategoryController#fetch_all as */*
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/controllers/api/v1/category_controller.rb:8:in `fetch_all'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.7ms | Allocations: 977)
+
+
