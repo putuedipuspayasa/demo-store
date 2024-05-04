@@ -12,10 +12,21 @@ Rails.application.routes.draw do
     namespace :v1 do
       get "/categories/all", to: "category#fetch_all"
       get "/categories", to: "category#paginate"
+      post "/category", to: "category#store"
       get "/category/:uid", to: "category#get_by_uid"
-      post "category", to: "category#store"
       put "category/:uid", to: "category#update"
       delete "/category/:uid", to: "category#delete"
+
+      get "/products/all", to: "product#fetch_all"
+      get "/products", to: "product#paginate"
+      post "/product", to: "product#store"
+      get "/product/:uid", to: "product#get_by_uid"
+      put "/product/:uid", to: "product#update"
+      delete "/product/:uid", to: "product#delete"
+
+      post "/order", to: "order#store"
+
+      post "/transaction", to: "transaction#store"
     end
   end
 end

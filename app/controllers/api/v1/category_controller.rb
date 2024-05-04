@@ -46,7 +46,7 @@ class Api::V1::CategoryController < ApplicationController
                 render json: ResponseFormatter.error("internal error", 400, category.errors), status: :internal_server_error
             end
         else
-            render json: ResponseFormatter.error("invalid requests", 400, params.errors.full_messages), status: :bad_request
+            render json: ResponseFormatter.error("invalid requests", 400, store_request.errors.full_messages), status: :bad_request
         end
     end
 
@@ -69,7 +69,6 @@ class Api::V1::CategoryController < ApplicationController
     def delete
         if @category_repo.delete_by_uid(params[:uid])
             render json: ResponseFormatter.success("success", nil, 200), status: :ok
-
         else
             render json: ResponseFormatter.error("process failed", 400), status: :bad_request
         end
@@ -79,6 +78,7 @@ class Api::V1::CategoryController < ApplicationController
     private
 
     def category_params
-        params.require(:category).permit(:name, :description)
+        params.permit(:name, :description)
     end
+
 end

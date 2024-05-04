@@ -19,7 +19,6 @@ class CategoryRepository
         [result, total_records, total_pages, per_page.to_i, page.to_i]
     end
 
-
     def get_by_uid(uid)
         @db.find_by(uid: uid)
     end
@@ -28,27 +27,27 @@ class CategoryRepository
         filter_query(filter).first
     end
 
-    def store(category_store_param)
-        category = @db.new(category_store_param)
-        category.uid = SecureRandom.uuid
-        category.save
+    def store(param)
+        row = @db.new(param)
+        row.uid = SecureRandom.uuid
+        row.save
 
-        category
+        row
     end
 
     def update_by_uid(uid, attributes)
-        category = Category.find_by(uid: uid)
-        return false unless category
+        row = @db.find_by(uid: uid)
+        return false unless row
 
-        category.update(attributes)
+        row.update(attributes)
         true
     end
 
     def delete_by_uid(uid)
-        category = @db.find_by(uid: uid)
-        return false unless category
+        row = @db.find_by(uid: uid)
+        return false unless row
 
-        category.destroy
+        row.destroy
         true
     end
 
