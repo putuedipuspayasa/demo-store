@@ -10671,3 +10671,612 @@ Processing by Api::V1::OrderController#store as */*
 Completed 200 OK in 55ms (Views: 0.1ms | ActiveRecord: 37.1ms | Allocations: 11342)
 
 
+Started GET "/api/v1/orders?status=pending" for ::1 at 2024-05-06 17:36:01 +0800
+Processing by Api::V1::OrderController#paginate as */*
+  Parameters: {"status"=>"pending"}
+  [1m[36mOrder Count (96.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders" WHERE "orders"."status" = $1[0m  [["status", "pending"]]
+  ↳ app/repositories/order_repository.rb:10:in `fetch_paginate'
+  [1m[36mOrder Load (3.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."status" = $1 ORDER BY id DESC LIMIT $2 OFFSET $3[0m  [["status", "pending"], ["LIMIT", 15], ["OFFSET", 0]]
+  ↳ app/controllers/api/v1/order_controller.rb:16:in `paginate'
+  [1m[36mCustomer Load (2.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."uid" = $1 LIMIT $2[0m  [["uid", "c1717892-7a7c-46b4-bd79-9ce4b4314c58"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:16:in `paginate'
+  [1m[36mCACHE Customer Load (0.0ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."uid" = $1 LIMIT $2[0m  [["uid", "c1717892-7a7c-46b4-bd79-9ce4b4314c58"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:16:in `paginate'
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."uid" = $1 LIMIT $2[0m  [["uid", "40bc95d2-b826-4d51-8a47-833c5bc9468c"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:16:in `paginate'
+Completed 200 OK in 178ms (Views: 0.4ms | ActiveRecord: 165.7ms | Allocations: 6411)
+
+
+Started GET "/api/v1/order/d5ba80cc-f2dd-40d3-9895-7c25c4de832d" for ::1 at 2024-05-06 17:36:09 +0800
+Processing by Api::V1::OrderController#get_by_uid as */*
+  Parameters: {"uid"=>"d5ba80cc-f2dd-40d3-9895-7c25c4de832d"}
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."uid" = $1 LIMIT $2[0m  [["uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"], ["LIMIT", 1]]
+  ↳ app/repositories/order_repository.rb:22:in `get_by_uid'
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."uid" = $1 LIMIT $2[0m  [["uid", "40bc95d2-b826-4d51-8a47-833c5bc9468c"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mOrderDetail Load (3.0ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_uid" = $1[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (6.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "e53e9ce7-faa3-4239-bc54-770c286682bc"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCategory Load (3.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "56409864-0aaf-4ddf-a3ad-5e2ab15c0356"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+Completed 200 OK in 121ms (Views: 0.2ms | ActiveRecord: 36.0ms | Allocations: 9774)
+
+
+Started GET "/api/v1/order/d5ba80cc-f2dd-40d3-9895-7c25c4de832d" for ::1 at 2024-05-06 17:36:45 +0800
+Processing by Api::V1::OrderController#get_by_uid as */*
+  Parameters: {"uid"=>"d5ba80cc-f2dd-40d3-9895-7c25c4de832d"}
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."uid" = $1 LIMIT $2[0m  [["uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"], ["LIMIT", 1]]
+  ↳ app/repositories/order_repository.rb:22:in `get_by_uid'
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."uid" = $1 LIMIT $2[0m  [["uid", "40bc95d2-b826-4d51-8a47-833c5bc9468c"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mOrderDetail Load (0.4ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_uid" = $1[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "e53e9ce7-faa3-4239-bc54-770c286682bc"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "56409864-0aaf-4ddf-a3ad-5e2ab15c0356"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+Completed 200 OK in 73ms (Views: 0.2ms | ActiveRecord: 40.8ms | Allocations: 25820)
+
+
+Started GET "/api/v1/order/d5ba80cc-f2dd-40d3-9895-7c25c4de832d" for ::1 at 2024-05-06 17:37:20 +0800
+Processing by Api::V1::OrderController#get_by_uid as */*
+  Parameters: {"uid"=>"d5ba80cc-f2dd-40d3-9895-7c25c4de832d"}
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."uid" = $1 LIMIT $2[0m  [["uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"], ["LIMIT", 1]]
+  ↳ app/repositories/order_repository.rb:22:in `get_by_uid'
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."uid" = $1 LIMIT $2[0m  [["uid", "40bc95d2-b826-4d51-8a47-833c5bc9468c"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mOrderDetail Load (0.2ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_uid" = $1[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "e53e9ce7-faa3-4239-bc54-770c286682bc"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "56409864-0aaf-4ddf-a3ad-5e2ab15c0356"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mPayment Load (3.6ms)[0m  [1m[34mSELECT "payments".* FROM "payments" WHERE "payments"."order_uid" = $1[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+Completed 200 OK in 84ms (Views: 0.2ms | ActiveRecord: 56.9ms | Allocations: 27783)
+
+
+Started POST "/api/v1/payment-order" for ::1 at 2024-05-06 17:37:33 +0800
+Processing by Api::V1::PaymentController#payment_by_order as */*
+  Parameters: {"order_uid"=>"d5ba80cc-f2dd-40d3-9895-7c25c4de832d", "payment"=>{"order_uid"=>"d5ba80cc-f2dd-40d3-9895-7c25c4de832d"}}
+[31mUnpermitted parameter: :payment. Context: { controller: Api::V1::PaymentController, action: payment_by_order, request: #<ActionDispatch::Request:0x000000011f351860>, params: {"order_uid"=>"d5ba80cc-f2dd-40d3-9895-7c25c4de832d", "controller"=>"api/v1/payment", "action"=>"payment_by_order", "payment"=>{"order_uid"=>"d5ba80cc-f2dd-40d3-9895-7c25c4de832d"}} }[0m
+[31mUnpermitted parameter: :payment. Context: { controller: Api::V1::PaymentController, action: payment_by_order, request: #<ActionDispatch::Request:0x000000011f351860>, params: {"order_uid"=>"d5ba80cc-f2dd-40d3-9895-7c25c4de832d", "controller"=>"api/v1/payment", "action"=>"payment_by_order", "payment"=>{"order_uid"=>"d5ba80cc-f2dd-40d3-9895-7c25c4de832d"}} }[0m
+  [1m[36mOrder Load (1.0ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."uid" = $1 LIMIT $2[0m  [["uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"], ["LIMIT", 1]]
+  ↳ app/repositories/order_repository.rb:26:in `get_by_uid_with_association'
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."uid" = $1[0m  [["uid", "40bc95d2-b826-4d51-8a47-833c5bc9468c"]]
+  ↳ app/repositories/order_repository.rb:26:in `get_by_uid_with_association'
+  [1m[36mOrderDetail Load (0.2ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_uid" = $1[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"]]
+  ↳ app/repositories/order_repository.rb:26:in `get_by_uid_with_association'
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" IN ($1, $2)[0m  [["uid", "e53e9ce7-faa3-4239-bc54-770c286682bc"], ["uid", "56409864-0aaf-4ddf-a3ad-5e2ab15c0356"]]
+  ↳ app/repositories/order_repository.rb:26:in `get_by_uid_with_association'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/repositories/payment_repository.rb:15:in `store'
+  [1m[36mPayment Create (7.0ms)[0m  [1m[32mINSERT INTO "payments" ("uid", "created_at", "updated_at", "order_uid", "amount", "paid_at", "status", "ref_id", "partner_ref_id", "payment_channel_uid", "payment_code", "payment_name", "notes") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["uid", "5c83f335-9aeb-4a1e-9552-63775f8037c0"], ["created_at", "2024-05-06 09:37:34.912115"], ["updated_at", "2024-05-06 09:37:34.912115"], ["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"], ["amount", 30000.0], ["paid_at", nil], ["status", "waiting_payment"], ["ref_id", "20240506173733687"], ["partner_ref_id", nil], ["payment_channel_uid", nil], ["payment_code", "https://sandbox-payment.ipaymu.com/#/16e057e3-e43b-41d0-9985-dee139091759"], ["payment_name", nil], ["notes", nil]]
+  ↳ app/repositories/payment_repository.rb:15:in `store'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/repositories/payment_repository.rb:15:in `store'
+Completed 200 OK in 1309ms (Views: 0.6ms | ActiveRecord: 13.5ms | Allocations: 11777)
+
+
+Started GET "/api/v1/order/d5ba80cc-f2dd-40d3-9895-7c25c4de832d" for ::1 at 2024-05-06 17:37:39 +0800
+Processing by Api::V1::OrderController#get_by_uid as */*
+  Parameters: {"uid"=>"d5ba80cc-f2dd-40d3-9895-7c25c4de832d"}
+  [1m[36mOrder Load (18.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."uid" = $1 LIMIT $2[0m  [["uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"], ["LIMIT", 1]]
+  ↳ app/repositories/order_repository.rb:22:in `get_by_uid'
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."uid" = $1 LIMIT $2[0m  [["uid", "40bc95d2-b826-4d51-8a47-833c5bc9468c"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mOrderDetail Load (0.3ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_uid" = $1[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "e53e9ce7-faa3-4239-bc54-770c286682bc"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "56409864-0aaf-4ddf-a3ad-5e2ab15c0356"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mPayment Load (17.5ms)[0m  [1m[34mSELECT "payments".* FROM "payments" WHERE "payments"."order_uid" = $1[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+Completed 200 OK in 54ms (Views: 0.3ms | ActiveRecord: 37.7ms | Allocations: 5738)
+
+
+Started POST "/api/v1/order" for ::1 at 2024-05-06 17:37:51 +0800
+Processing by Api::V1::OrderController#store as */*
+  Parameters: {"name"=>"asdasd", "email"=>"tes2@mail.com", "phone"=>"0812312312392", "products"=>[{"uid"=>"e53e9ce7-faa3-4239-bc54-770c286682bc", "qty"=>1}, {"uid"=>"56409864-0aaf-4ddf-a3ad-5e2ab15c0356", "qty"=>2}], "order"=>{}}
+[31mUnpermitted parameter: :order. Context: { controller: Api::V1::OrderController, action: store, request: #<ActionDispatch::Request:0x000000011f652fa0>, params: {"name"=>"asdasd", "email"=>"tes2@mail.com", "phone"=>"0812312312392", "products"=>[{"uid"=>"e53e9ce7-faa3-4239-bc54-770c286682bc", "qty"=>1}, {"uid"=>"56409864-0aaf-4ddf-a3ad-5e2ab15c0356", "qty"=>2}], "controller"=>"api/v1/order", "action"=>"store", "order"=>{}} }[0m
+[31mUnpermitted parameter: :order. Context: { controller: Api::V1::OrderController, action: store, request: #<ActionDispatch::Request:0x000000011f652fa0>, params: {"name"=>"asdasd", "email"=>"tes2@mail.com", "phone"=>"0812312312392", "products"=>[{"uid"=>"e53e9ce7-faa3-4239-bc54-770c286682bc", "qty"=>1}, {"uid"=>"56409864-0aaf-4ddf-a3ad-5e2ab15c0356", "qty"=>2}], "controller"=>"api/v1/order", "action"=>"store", "order"=>{}} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/repositories/customer_repository.rb:9:in `find_by_email_phone'
+  [1m[36mCustomer Load (49.9ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE (LOWER(email) = 'tes2@mail.com' OR phone = '0812312312392') ORDER BY "customers"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/repositories/customer_repository.rb:9:in `find_by_email_phone'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "e53e9ce7-faa3-4239-bc54-770c286682bc"], ["LIMIT", 1]]
+  ↳ app/repositories/product_repository.rb:27:in `get_by_uid'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "e53e9ce7-faa3-4239-bc54-770c286682bc"], ["LIMIT", 1]]
+  ↳ app/repositories/order_detail_repository.rb:15:in `store'
+  [1m[36mOrderDetail Create (3.2ms)[0m  [1m[32mINSERT INTO "order_details" ("uid", "created_at", "updated_at", "order_uid", "product_uid", "price", "qty", "discount_value", "notes") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["uid", "1eb0e1e2-c201-4c3e-9a4c-2d49bb06a534"], ["created_at", "2024-05-06 09:37:51.732352"], ["updated_at", "2024-05-06 09:37:51.732352"], ["order_uid", "c3622b02-029f-4556-a595-085edcad4d28"], ["product_uid", "e53e9ce7-faa3-4239-bc54-770c286682bc"], ["price", 10000.0], ["qty", 1], ["discount_value", 0.0], ["notes", nil]]
+  ↳ app/repositories/order_detail_repository.rb:15:in `store'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "56409864-0aaf-4ddf-a3ad-5e2ab15c0356"], ["LIMIT", 1]]
+  ↳ app/repositories/product_repository.rb:27:in `get_by_uid'
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "56409864-0aaf-4ddf-a3ad-5e2ab15c0356"], ["LIMIT", 1]]
+  ↳ app/repositories/order_detail_repository.rb:15:in `store'
+  [1m[36mOrderDetail Create (0.3ms)[0m  [1m[32mINSERT INTO "order_details" ("uid", "created_at", "updated_at", "order_uid", "product_uid", "price", "qty", "discount_value", "notes") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["uid", "3fc2e706-ebab-4ebb-a484-6021ccc06d8a"], ["created_at", "2024-05-06 09:37:51.738744"], ["updated_at", "2024-05-06 09:37:51.738744"], ["order_uid", "c3622b02-029f-4556-a595-085edcad4d28"], ["product_uid", "56409864-0aaf-4ddf-a3ad-5e2ab15c0356"], ["price", 10000.0], ["qty", 2], ["discount_value", 0.0], ["notes", nil]]
+  ↳ app/repositories/order_detail_repository.rb:15:in `store'
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."uid" = $1 LIMIT $2[0m  [["uid", "c1717892-7a7c-46b4-bd79-9ce4b4314c58"], ["LIMIT", 1]]
+  ↳ app/repositories/order_repository.rb:37:in `store'
+  [1m[36mOrder Create (2.1ms)[0m  [1m[32mINSERT INTO "orders" ("uid", "created_at", "updated_at", "customer_uid", "sub_total", "discount_total", "tax", "grand_total", "notes", "status", "payment_status") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["uid", "c3622b02-029f-4556-a595-085edcad4d28"], ["created_at", "2024-05-06 09:37:51.741294"], ["updated_at", "2024-05-06 09:37:51.741294"], ["customer_uid", "c1717892-7a7c-46b4-bd79-9ce4b4314c58"], ["sub_total", 30000.0], ["discount_total", 0.0], ["tax", 0.0], ["grand_total", 30000.0], ["notes", nil], ["status", "pending"], ["payment_status", "waiting_payment"]]
+  ↳ app/repositories/order_repository.rb:37:in `store'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/services/order_service.rb:12:in `create_order'
+  [1m[36mOrderDetail Load (0.3ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_uid" = $1[0m  [["order_uid", "c3622b02-029f-4556-a595-085edcad4d28"]]
+  ↳ app/controllers/api/v1/order_controller.rb:34:in `store'
+Completed 200 OK in 86ms (Views: 0.2ms | ActiveRecord: 58.9ms | Allocations: 10587)
+
+
+Started POST "/api/v1/payment-order" for ::1 at 2024-05-06 17:37:54 +0800
+Processing by Api::V1::PaymentController#payment_by_order as */*
+  Parameters: {"order_uid"=>"d5ba80cc-f2dd-40d3-9895-7c25c4de832d", "payment"=>{"order_uid"=>"d5ba80cc-f2dd-40d3-9895-7c25c4de832d"}}
+[31mUnpermitted parameter: :payment. Context: { controller: Api::V1::PaymentController, action: payment_by_order, request: #<ActionDispatch::Request:0x000000011ce1fd30>, params: {"order_uid"=>"d5ba80cc-f2dd-40d3-9895-7c25c4de832d", "controller"=>"api/v1/payment", "action"=>"payment_by_order", "payment"=>{"order_uid"=>"d5ba80cc-f2dd-40d3-9895-7c25c4de832d"}} }[0m
+[31mUnpermitted parameter: :payment. Context: { controller: Api::V1::PaymentController, action: payment_by_order, request: #<ActionDispatch::Request:0x000000011ce1fd30>, params: {"order_uid"=>"d5ba80cc-f2dd-40d3-9895-7c25c4de832d", "controller"=>"api/v1/payment", "action"=>"payment_by_order", "payment"=>{"order_uid"=>"d5ba80cc-f2dd-40d3-9895-7c25c4de832d"}} }[0m
+  [1m[36mOrder Load (8.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."uid" = $1 LIMIT $2[0m  [["uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"], ["LIMIT", 1]]
+  ↳ app/repositories/order_repository.rb:26:in `get_by_uid_with_association'
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."uid" = $1[0m  [["uid", "40bc95d2-b826-4d51-8a47-833c5bc9468c"]]
+  ↳ app/repositories/order_repository.rb:26:in `get_by_uid_with_association'
+  [1m[36mOrderDetail Load (0.2ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_uid" = $1[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"]]
+  ↳ app/repositories/order_repository.rb:26:in `get_by_uid_with_association'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" IN ($1, $2)[0m  [["uid", "e53e9ce7-faa3-4239-bc54-770c286682bc"], ["uid", "56409864-0aaf-4ddf-a3ad-5e2ab15c0356"]]
+  ↳ app/repositories/order_repository.rb:26:in `get_by_uid_with_association'
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/repositories/payment_repository.rb:15:in `store'
+  [1m[36mPayment Create (5.1ms)[0m  [1m[32mINSERT INTO "payments" ("uid", "created_at", "updated_at", "order_uid", "amount", "paid_at", "status", "ref_id", "partner_ref_id", "payment_channel_uid", "payment_code", "payment_name", "notes") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["uid", "c7448193-da94-4d45-9d4a-434bb171a86c"], ["created_at", "2024-05-06 09:37:55.546774"], ["updated_at", "2024-05-06 09:37:55.546774"], ["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"], ["amount", 30000.0], ["paid_at", nil], ["status", "waiting_payment"], ["ref_id", "20240506173754661"], ["partner_ref_id", nil], ["payment_channel_uid", nil], ["payment_code", "https://sandbox-payment.ipaymu.com/#/4130e00f-ec10-4780-b202-9027e7ae4a24"], ["payment_name", nil], ["notes", nil]]
+  ↳ app/repositories/payment_repository.rb:15:in `store'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/repositories/payment_repository.rb:15:in `store'
+Completed 200 OK in 938ms (Views: 0.7ms | ActiveRecord: 17.6ms | Allocations: 5807)
+
+
+Started GET "/api/v1/order/d5ba80cc-f2dd-40d3-9895-7c25c4de832d" for ::1 at 2024-05-06 17:37:58 +0800
+Processing by Api::V1::OrderController#get_by_uid as */*
+  Parameters: {"uid"=>"d5ba80cc-f2dd-40d3-9895-7c25c4de832d"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."uid" = $1 LIMIT $2[0m  [["uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"], ["LIMIT", 1]]
+  ↳ app/repositories/order_repository.rb:22:in `get_by_uid'
+  [1m[36mCustomer Load (32.9ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."uid" = $1 LIMIT $2[0m  [["uid", "40bc95d2-b826-4d51-8a47-833c5bc9468c"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mOrderDetail Load (0.3ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_uid" = $1[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "e53e9ce7-faa3-4239-bc54-770c286682bc"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "56409864-0aaf-4ddf-a3ad-5e2ab15c0356"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mPayment Load (0.3ms)[0m  [1m[34mSELECT "payments".* FROM "payments" WHERE "payments"."order_uid" = $1[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+Completed 200 OK in 52ms (Views: 0.5ms | ActiveRecord: 34.5ms | Allocations: 5822)
+
+
+Started GET "/api/v1/order/d5ba80cc-f2dd-40d3-9895-7c25c4de832d" for ::1 at 2024-05-06 17:39:06 +0800
+Processing by Api::V1::OrderController#get_by_uid as */*
+  Parameters: {"uid"=>"d5ba80cc-f2dd-40d3-9895-7c25c4de832d"}
+  [1m[36mOrder Load (1.6ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."uid" = $1 LIMIT $2[0m  [["uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"], ["LIMIT", 1]]
+  ↳ app/repositories/order_repository.rb:22:in `get_by_uid'
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."uid" = $1 LIMIT $2[0m  [["uid", "40bc95d2-b826-4d51-8a47-833c5bc9468c"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mOrderDetail Load (0.3ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_uid" = $1[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "e53e9ce7-faa3-4239-bc54-770c286682bc"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "56409864-0aaf-4ddf-a3ad-5e2ab15c0356"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mPayment Load (0.4ms)[0m  [1m[34mSELECT "payments".* FROM "payments" WHERE "payments"."order_uid" = $1 ORDER BY "payments"."id" DESC[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+Completed 200 OK in 161ms (Views: 0.3ms | ActiveRecord: 59.2ms | Allocations: 32628)
+
+
+Started GET "/api/v1/order/d5ba80cc-f2dd-40d3-9895-7c25c4de832d" for ::1 at 2024-05-06 17:39:11 +0800
+Processing by Api::V1::OrderController#get_by_uid as */*
+  Parameters: {"uid"=>"d5ba80cc-f2dd-40d3-9895-7c25c4de832d"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."uid" = $1 LIMIT $2[0m  [["uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"], ["LIMIT", 1]]
+  ↳ app/repositories/order_repository.rb:22:in `get_by_uid'
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."uid" = $1 LIMIT $2[0m  [["uid", "40bc95d2-b826-4d51-8a47-833c5bc9468c"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mOrderDetail Load (0.2ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_uid" = $1[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "e53e9ce7-faa3-4239-bc54-770c286682bc"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "56409864-0aaf-4ddf-a3ad-5e2ab15c0356"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mPayment Load (0.3ms)[0m  [1m[34mSELECT "payments".* FROM "payments" WHERE "payments"."order_uid" = $1 ORDER BY "payments"."id" DESC[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 6024)
+
+
+Started GET "/api/v1/order/d5ba80cc-f2dd-40d3-9895-7c25c4de832d" for ::1 at 2024-05-06 17:39:27 +0800
+Processing by Api::V1::OrderController#get_by_uid as */*
+  Parameters: {"uid"=>"d5ba80cc-f2dd-40d3-9895-7c25c4de832d"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."uid" = $1 LIMIT $2[0m  [["uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"], ["LIMIT", 1]]
+  ↳ app/repositories/order_repository.rb:22:in `get_by_uid'
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."uid" = $1 LIMIT $2[0m  [["uid", "40bc95d2-b826-4d51-8a47-833c5bc9468c"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mOrderDetail Load (0.1ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_uid" = $1[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "e53e9ce7-faa3-4239-bc54-770c286682bc"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "56409864-0aaf-4ddf-a3ad-5e2ab15c0356"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mPayment Load (0.5ms)[0m  [1m[34mSELECT "payments".* FROM "payments" WHERE "payments"."order_uid" = $1 ORDER BY "payments"."id" DESC[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+Completed 200 OK in 31ms (Views: 0.7ms | ActiveRecord: 1.4ms | Allocations: 6011)
+
+
+Started GET "/api/v1/order/d5ba80cc-f2dd-40d3-9895-7c25c4de832d" for ::1 at 2024-05-06 17:40:03 +0800
+Processing by Api::V1::OrderController#get_by_uid as */*
+  Parameters: {"uid"=>"d5ba80cc-f2dd-40d3-9895-7c25c4de832d"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."uid" = $1 LIMIT $2[0m  [["uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"], ["LIMIT", 1]]
+  ↳ app/repositories/order_repository.rb:22:in `get_by_uid'
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."uid" = $1 LIMIT $2[0m  [["uid", "40bc95d2-b826-4d51-8a47-833c5bc9468c"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mOrderDetail Load (0.2ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_uid" = $1[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "e53e9ce7-faa3-4239-bc54-770c286682bc"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "56409864-0aaf-4ddf-a3ad-5e2ab15c0356"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mPayment Load (0.4ms)[0m  [1m[34mSELECT "payments".* FROM "payments" WHERE "payments"."order_uid" = $1 ORDER BY "payments"."id" DESC LIMIT $2[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+Completed 200 OK in 68ms (Views: 0.2ms | ActiveRecord: 40.2ms | Allocations: 32927)
+
+
+Started GET "/api/v1/order/d5ba80cc-f2dd-40d3-9895-7c25c4de832d" for ::1 at 2024-05-06 17:40:06 +0800
+Processing by Api::V1::OrderController#get_by_uid as */*
+  Parameters: {"uid"=>"d5ba80cc-f2dd-40d3-9895-7c25c4de832d"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."uid" = $1 LIMIT $2[0m  [["uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"], ["LIMIT", 1]]
+  ↳ app/repositories/order_repository.rb:22:in `get_by_uid'
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."uid" = $1 LIMIT $2[0m  [["uid", "40bc95d2-b826-4d51-8a47-833c5bc9468c"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mOrderDetail Load (0.2ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_uid" = $1[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "e53e9ce7-faa3-4239-bc54-770c286682bc"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "56409864-0aaf-4ddf-a3ad-5e2ab15c0356"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mPayment Load (0.4ms)[0m  [1m[34mSELECT "payments".* FROM "payments" WHERE "payments"."order_uid" = $1 ORDER BY "payments"."id" DESC LIMIT $2[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 1.3ms | Allocations: 5878)
+
+
+Started GET "/api/v1/order/d5ba80cc-f2dd-40d3-9895-7c25c4de832d" for ::1 at 2024-05-06 17:40:07 +0800
+Processing by Api::V1::OrderController#get_by_uid as */*
+  Parameters: {"uid"=>"d5ba80cc-f2dd-40d3-9895-7c25c4de832d"}
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."uid" = $1 LIMIT $2[0m  [["uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"], ["LIMIT", 1]]
+  ↳ app/repositories/order_repository.rb:22:in `get_by_uid'
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."uid" = $1 LIMIT $2[0m  [["uid", "40bc95d2-b826-4d51-8a47-833c5bc9468c"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mOrderDetail Load (0.2ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_uid" = $1[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "e53e9ce7-faa3-4239-bc54-770c286682bc"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "56409864-0aaf-4ddf-a3ad-5e2ab15c0356"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mPayment Load (1.3ms)[0m  [1m[34mSELECT "payments".* FROM "payments" WHERE "payments"."order_uid" = $1 ORDER BY "payments"."id" DESC LIMIT $2[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+Completed 200 OK in 27ms (Views: 0.3ms | ActiveRecord: 2.4ms | Allocations: 5870)
+
+
+Started GET "/api/v1/order/d5ba80cc-f2dd-40d3-9895-7c25c4de832d" for ::1 at 2024-05-06 17:40:07 +0800
+Processing by Api::V1::OrderController#get_by_uid as */*
+  Parameters: {"uid"=>"d5ba80cc-f2dd-40d3-9895-7c25c4de832d"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."uid" = $1 LIMIT $2[0m  [["uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"], ["LIMIT", 1]]
+  ↳ app/repositories/order_repository.rb:22:in `get_by_uid'
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."uid" = $1 LIMIT $2[0m  [["uid", "40bc95d2-b826-4d51-8a47-833c5bc9468c"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mOrderDetail Load (0.1ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_uid" = $1[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "e53e9ce7-faa3-4239-bc54-770c286682bc"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "56409864-0aaf-4ddf-a3ad-5e2ab15c0356"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mPayment Load (0.3ms)[0m  [1m[34mSELECT "payments".* FROM "payments" WHERE "payments"."order_uid" = $1 ORDER BY "payments"."id" DESC LIMIT $2[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+Completed 200 OK in 12ms (Views: 1.2ms | ActiveRecord: 1.0ms | Allocations: 5868)
+
+
+Started GET "/api/v1/order/d5ba80cc-f2dd-40d3-9895-7c25c4de832d" for ::1 at 2024-05-06 17:40:10 +0800
+Processing by Api::V1::OrderController#get_by_uid as */*
+  Parameters: {"uid"=>"d5ba80cc-f2dd-40d3-9895-7c25c4de832d"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."uid" = $1 LIMIT $2[0m  [["uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"], ["LIMIT", 1]]
+  ↳ app/repositories/order_repository.rb:22:in `get_by_uid'
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."uid" = $1 LIMIT $2[0m  [["uid", "40bc95d2-b826-4d51-8a47-833c5bc9468c"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mOrderDetail Load (0.1ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_uid" = $1[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "e53e9ce7-faa3-4239-bc54-770c286682bc"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "56409864-0aaf-4ddf-a3ad-5e2ab15c0356"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mPayment Load (0.2ms)[0m  [1m[34mSELECT "payments".* FROM "payments" WHERE "payments"."order_uid" = $1 ORDER BY "payments"."id" DESC LIMIT $2[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 5868)
+
+
+Started GET "/api/v1/order/d5ba80cc-f2dd-40d3-9895-7c25c4de832d" for ::1 at 2024-05-06 17:40:11 +0800
+Processing by Api::V1::OrderController#get_by_uid as */*
+  Parameters: {"uid"=>"d5ba80cc-f2dd-40d3-9895-7c25c4de832d"}
+  [1m[36mOrder Load (4.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."uid" = $1 LIMIT $2[0m  [["uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"], ["LIMIT", 1]]
+  ↳ app/repositories/order_repository.rb:22:in `get_by_uid'
+  [1m[36mCustomer Load (2.1ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."uid" = $1 LIMIT $2[0m  [["uid", "40bc95d2-b826-4d51-8a47-833c5bc9468c"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mOrderDetail Load (0.1ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_uid" = $1[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "e53e9ce7-faa3-4239-bc54-770c286682bc"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "56409864-0aaf-4ddf-a3ad-5e2ab15c0356"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mPayment Load (0.3ms)[0m  [1m[34mSELECT "payments".* FROM "payments" WHERE "payments"."order_uid" = $1 ORDER BY "payments"."id" DESC LIMIT $2[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 7.8ms | Allocations: 5868)
+
+
+Started GET "/api/v1/order/d5ba80cc-f2dd-40d3-9895-7c25c4de832d" for ::1 at 2024-05-06 17:40:12 +0800
+Processing by Api::V1::OrderController#get_by_uid as */*
+  Parameters: {"uid"=>"d5ba80cc-f2dd-40d3-9895-7c25c4de832d"}
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."uid" = $1 LIMIT $2[0m  [["uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"], ["LIMIT", 1]]
+  ↳ app/repositories/order_repository.rb:22:in `get_by_uid'
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."uid" = $1 LIMIT $2[0m  [["uid", "40bc95d2-b826-4d51-8a47-833c5bc9468c"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mOrderDetail Load (0.3ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_uid" = $1[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "e53e9ce7-faa3-4239-bc54-770c286682bc"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "56409864-0aaf-4ddf-a3ad-5e2ab15c0356"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mPayment Load (0.2ms)[0m  [1m[34mSELECT "payments".* FROM "payments" WHERE "payments"."order_uid" = $1 ORDER BY "payments"."id" DESC LIMIT $2[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+Completed 200 OK in 21ms (Views: 0.3ms | ActiveRecord: 1.7ms | Allocations: 5870)
+
+
+Started GET "/api/v1/order/d5ba80cc-f2dd-40d3-9895-7c25c4de832d" for ::1 at 2024-05-06 17:40:13 +0800
+Processing by Api::V1::OrderController#get_by_uid as */*
+  Parameters: {"uid"=>"d5ba80cc-f2dd-40d3-9895-7c25c4de832d"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."uid" = $1 LIMIT $2[0m  [["uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"], ["LIMIT", 1]]
+  ↳ app/repositories/order_repository.rb:22:in `get_by_uid'
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."uid" = $1 LIMIT $2[0m  [["uid", "40bc95d2-b826-4d51-8a47-833c5bc9468c"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mOrderDetail Load (0.2ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_uid" = $1[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "e53e9ce7-faa3-4239-bc54-770c286682bc"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "56409864-0aaf-4ddf-a3ad-5e2ab15c0356"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mPayment Load (0.1ms)[0m  [1m[34mSELECT "payments".* FROM "payments" WHERE "payments"."order_uid" = $1 ORDER BY "payments"."id" DESC LIMIT $2[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 5868)
+
+
+Started GET "/api/v1/order/d5ba80cc-f2dd-40d3-9895-7c25c4de832d" for ::1 at 2024-05-06 17:40:13 +0800
+Processing by Api::V1::OrderController#get_by_uid as */*
+  Parameters: {"uid"=>"d5ba80cc-f2dd-40d3-9895-7c25c4de832d"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."uid" = $1 LIMIT $2[0m  [["uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"], ["LIMIT", 1]]
+  ↳ app/repositories/order_repository.rb:22:in `get_by_uid'
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."uid" = $1 LIMIT $2[0m  [["uid", "40bc95d2-b826-4d51-8a47-833c5bc9468c"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mOrderDetail Load (0.2ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_uid" = $1[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "e53e9ce7-faa3-4239-bc54-770c286682bc"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "56409864-0aaf-4ddf-a3ad-5e2ab15c0356"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mPayment Load (0.2ms)[0m  [1m[34mSELECT "payments".* FROM "payments" WHERE "payments"."order_uid" = $1 ORDER BY "payments"."id" DESC LIMIT $2[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+Completed 200 OK in 24ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 5870)
+
+
+Started GET "/api/v1/order/d5ba80cc-f2dd-40d3-9895-7c25c4de832d" for ::1 at 2024-05-06 17:40:14 +0800
+Processing by Api::V1::OrderController#get_by_uid as */*
+  Parameters: {"uid"=>"d5ba80cc-f2dd-40d3-9895-7c25c4de832d"}
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."uid" = $1 LIMIT $2[0m  [["uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"], ["LIMIT", 1]]
+  ↳ app/repositories/order_repository.rb:22:in `get_by_uid'
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT "customers".* FROM "customers" WHERE "customers"."uid" = $1 LIMIT $2[0m  [["uid", "40bc95d2-b826-4d51-8a47-833c5bc9468c"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mOrderDetail Load (0.1ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_uid" = $1[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "e53e9ce7-faa3-4239-bc54-770c286682bc"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."uid" = $1 LIMIT $2[0m  [["uid", "56409864-0aaf-4ddf-a3ad-5e2ab15c0356"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."uid" = $1 LIMIT $2[0m  [["uid", "84cc99e8-f66e-476c-97d3-83c4391818a4"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+  [1m[36mPayment Load (0.1ms)[0m  [1m[34mSELECT "payments".* FROM "payments" WHERE "payments"."order_uid" = $1 ORDER BY "payments"."id" DESC LIMIT $2[0m  [["order_uid", "d5ba80cc-f2dd-40d3-9895-7c25c4de832d"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/order_controller.rb:22:in `get_by_uid'
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 5868)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (4.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateProductImages (20240506094414)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4672962957319014330)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateProductImages (20240506094414)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(4672962957319014330)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateProductImages (20240506094414)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4672962957319014330)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateProductImages (20240506094414)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (33.4ms)[0m  [1m[35mCREATE TABLE "product_images" ("id" bigserial primary key, "uid" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "product_uid" character varying, "storage" character varying, "path" character varying, "file_name" character varying)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_product_images_on_id" ON "product_images" ("id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_product_images_on_uid" ON "product_images" ("uid")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE INDEX "index_product_images_on_created_at" ON "product_images" ("created_at")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_product_images_on_updated_at" ON "product_images" ("updated_at")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_product_images_on_product_uid" ON "product_images" ("product_uid")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_product_images_on_storage" ON "product_images" ("storage")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE INDEX "index_product_images_on_path" ON "product_images" ("path")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_product_images_on_file_name" ON "product_images" ("file_name")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240506094414') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateProductImages (20240506094414)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.3ms)[0m  [1m[35mDROP INDEX  "index_product_images_on_file_name"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP INDEX  "index_product_images_on_path"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP INDEX  "index_product_images_on_storage"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP INDEX  "index_product_images_on_product_uid"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP INDEX  "index_product_images_on_updated_at"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP INDEX  "index_product_images_on_created_at"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP INDEX  "index_product_images_on_uid"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP INDEX  "index_product_images_on_id"[0m
+  [1m[35m (4.2ms)[0m  [1m[35mDROP TABLE "product_images"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (2.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20240506094414'[0m
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePaymentChannels (20240506064532)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePaymentChannels (20240506064532)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePaymentChannels (20240506064532)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP INDEX  "index_payment_channels_on_status"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP INDEX  "index_payment_channels_on_name"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP INDEX  "index_payment_channels_on_updated_at"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP INDEX  "index_payment_channels_on_created_at"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP INDEX  "index_payment_channels_on_uid"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP INDEX  "index_payment_channels_on_id"[0m
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE "payment_channels"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.7ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20240506064532'[0m
+  [1m[36mTRANSACTION (7.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreatePaymentChannels (20240506064532)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (13.7ms)[0m  [1m[35mCREATE TABLE "payment_channels" ("id" bigserial primary key, "uid" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "name" character varying, "description" text, "notes" text, "payment_flow" character varying, "status" character varying, "vendor" character varying, "icon_path" character varying, "icon_file_name" character varying)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE INDEX "index_payment_channels_on_id" ON "payment_channels" ("id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_payment_channels_on_uid" ON "payment_channels" ("uid")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE INDEX "index_payment_channels_on_created_at" ON "payment_channels" ("created_at")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE INDEX "index_payment_channels_on_updated_at" ON "payment_channels" ("updated_at")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE INDEX "index_payment_channels_on_name" ON "payment_channels" ("name")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE INDEX "index_payment_channels_on_status" ON "payment_channels" ("status")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_payment_channels_on_icon_path" ON "payment_channels" ("icon_path")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE INDEX "index_payment_channels_on_icon_file_name" ON "payment_channels" ("icon_file_name")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240506064532') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProductImages (20240506094414)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "product_images" ("id" bigserial primary key, "uid" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "product_uid" character varying, "storage" character varying, "path" character varying, "file_name" character varying)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE INDEX "index_product_images_on_id" ON "product_images" ("id")[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_product_images_on_uid" ON "product_images" ("uid")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE INDEX "index_product_images_on_created_at" ON "product_images" ("created_at")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE INDEX "index_product_images_on_updated_at" ON "product_images" ("updated_at")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE INDEX "index_product_images_on_product_uid" ON "product_images" ("product_uid")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE INDEX "index_product_images_on_storage" ON "product_images" ("storage")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "index_product_images_on_path" ON "product_images" ("path")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE INDEX "index_product_images_on_file_name" ON "product_images" ("file_name")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240506094414') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(4672962957319014330)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

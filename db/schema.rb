@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_06_064532) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_06_094414) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -91,16 +91,18 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_06_064532) do
     t.text "description"
     t.text "notes"
     t.string "payment_flow"
-    t.string "media_uid"
     t.string "status"
     t.string "vendor"
+    t.string "icon_path"
+    t.string "icon_file_name"
     t.index ["created_at"], name: "index_payment_channels_on_created_at"
+    t.index ["icon_file_name"], name: "index_payment_channels_on_icon_file_name"
+    t.index ["icon_path"], name: "index_payment_channels_on_icon_path"
     t.index ["id"], name: "index_payment_channels_on_id"
     t.index ["name"], name: "index_payment_channels_on_name"
     t.index ["status"], name: "index_payment_channels_on_status"
     t.index ["uid"], name: "index_payment_channels_on_uid", unique: true
     t.index ["updated_at"], name: "index_payment_channels_on_updated_at"
-    t.index ["vendor"], name: "index_payment_channels_on_vendor"
   end
 
   create_table "payments", force: :cascade do |t|
@@ -128,6 +130,24 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_06_064532) do
     t.index ["status"], name: "index_payments_on_status"
     t.index ["uid"], name: "index_payments_on_uid", unique: true
     t.index ["updated_at"], name: "index_payments_on_updated_at"
+  end
+
+  create_table "product_images", force: :cascade do |t|
+    t.string "uid", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "product_uid"
+    t.string "storage"
+    t.string "path"
+    t.string "file_name"
+    t.index ["created_at"], name: "index_product_images_on_created_at"
+    t.index ["file_name"], name: "index_product_images_on_file_name"
+    t.index ["id"], name: "index_product_images_on_id"
+    t.index ["path"], name: "index_product_images_on_path"
+    t.index ["product_uid"], name: "index_product_images_on_product_uid"
+    t.index ["storage"], name: "index_product_images_on_storage"
+    t.index ["uid"], name: "index_product_images_on_uid", unique: true
+    t.index ["updated_at"], name: "index_product_images_on_updated_at"
   end
 
   create_table "products", force: :cascade do |t|

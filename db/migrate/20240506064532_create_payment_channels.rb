@@ -7,9 +7,10 @@ class CreatePaymentChannels < ActiveRecord::Migration[7.1]
       t.text :description
       t.text :notes
       t.string :payment_flow
-      t.string :media_uid
       t.string :status
       t.string :vendor
+      t.string :icon_path
+      t.string :icon_file_name
     end
 
     add_index :payment_channels, :id
@@ -18,6 +19,7 @@ class CreatePaymentChannels < ActiveRecord::Migration[7.1]
     add_index :payment_channels, :updated_at
     add_index :payment_channels, :name
     add_index :payment_channels, :status
-    add_index :payment_channels, :vendor
+    add_index :payment_channels, :icon_path
+    add_index :payment_channels, :icon_file_name
   end
 end

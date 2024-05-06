@@ -21,13 +21,17 @@ ORDER_STATUS = {
 }.freeze
 
 PAYMENT_STATUS = {
-  pending: 'waiting_payment',
+  pending: 'pending',
   paid: 'paid',
   refunded: 'refunded',
   failed: 'failed'
 }.freeze
 
-PAYMENT_TYPE = {
+PAYMENT_FLOW = {
   redirect: 'redirect',
-  direct: 'direct',
+  cash: 'cash',
+  va: 'va',
+  retail: 'retail',
+  qris: 'qris',
+  cc: 'cc',
 }.freeze

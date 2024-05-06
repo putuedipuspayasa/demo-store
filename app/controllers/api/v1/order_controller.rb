@@ -19,7 +19,7 @@ class Api::V1::OrderController < ApplicationController
   def get_by_uid
     row = @order_repo.get_by_uid(params[:uid])
     if row.present?
-      render json: ResponseFormatter.success("success", JSON.parse(row.to_json(include: [:customer, { order_details: { include: {product: {include: :category}} }}])), 200), status: :ok
+      render json: ResponseFormatter.success("success", JSON.parse(row.to_json(include: [:customer, { order_details: { include: {product: {include: :category}} }}, :payment])), 200), status: :ok
     else
       render json: ResponseFormatter.error("record not found", 400), status: :bad_request
     end
