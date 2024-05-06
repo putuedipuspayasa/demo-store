@@ -1,4 +1,4 @@
-# Simple Online Store (Integrated with iPaymu Payment Gateway): Implementing Service and Repository Pattern with Ruby on Rails
+# Ruby on Rails Simple Online Store: Implementing Service and Repository Pattern, Integrated with iPaymu Payment Gateway
 
 This project is a simple online store developed using Ruby on Rails, highlighting the implementation of the Service and Repository patterns. The Service pattern encapsulates business logic, while the Repository pattern abstracts data access, fostering improved code organization, maintainability, and scalability. Additionally, the project seamlessly integrates with the iPaymu payment gateway, enabling secure and efficient payment processing.
 
