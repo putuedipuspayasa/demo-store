@@ -16,4 +16,8 @@ class CreateCustomers < ActiveRecord::Migration[7.1]
     add_index :customers, :email
     add_index :customers, :phone
   end
+
+  def down
+    drop_table :customers
+  end
 end

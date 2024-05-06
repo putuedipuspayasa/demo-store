@@ -43,7 +43,7 @@ class Api::V1::CategoryController < ApplicationController
             if category.present?
                 render json: ResponseFormatter.success("success", category, 200), status: :ok
             else
-                render json: ResponseFormatter.error("internal error", 400, category.errors), status: :internal_server_error
+                render json: ResponseFormatter.error("internal error", 500, category.errors), status: :internal_server_error
             end
         else
             render json: ResponseFormatter.error("invalid requests", 400, store_request.errors.full_messages), status: :bad_request

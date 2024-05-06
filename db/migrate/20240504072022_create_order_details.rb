@@ -18,4 +18,8 @@ class CreateOrderDetails < ActiveRecord::Migration[7.1]
     add_index :order_details, :order_uid
     add_index :order_details, :product_uid
   end
+
+  def down
+    drop_table :order_details
+  end
 end

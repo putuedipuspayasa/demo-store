@@ -12,7 +12,6 @@ class OrderStoreRequest
   validate :products_must_be_an_array
   validate :products_uid_must_be_present
   validate :products_qty_must_be_integer
-  validate :products_price_must_be_number
 
   private
 

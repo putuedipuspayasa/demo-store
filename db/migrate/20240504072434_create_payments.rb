@@ -7,10 +7,10 @@ class CreatePayments < ActiveRecord::Migration[7.1]
       t.float :amount
       t.timestamp :paid_at
       t.string :status
-      t.string :type
+      t.string :ref_id
+      t.string :partner_ref_id
       t.string :payment_channel_uid
       t.string :payment_code
-      t.string :payment_url
       t.string :payment_name
       t.text :notes
     end
@@ -22,9 +22,13 @@ class CreatePayments < ActiveRecord::Migration[7.1]
     add_index :payments, :order_uid
     add_index :payments, :paid_at
     add_index :payments, :status
-    add_index :payments, :type
+    add_index :payments, :ref_id
+    add_index :payments, :partner_ref_id
     add_index :payments, :payment_channel_uid
     add_index :payments, :payment_code
-    add_index :payments, :payment_url
+  end
+
+  def down
+    drop_table :payments
   end
 end

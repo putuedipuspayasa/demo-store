@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-class OrderDetailRepository
-  def initialize(db = OrderDetail)
+class PaymentRepository
+  def initialize(db = Payment)
     @db = db
   end
 

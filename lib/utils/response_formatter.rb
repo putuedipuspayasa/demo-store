@@ -12,4 +12,4 @@ module ResponseFormatter
         response[:errors] = errors if errors.present?
         response
     end
-  end
+end

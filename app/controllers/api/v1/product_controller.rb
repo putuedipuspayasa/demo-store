@@ -40,7 +40,7 @@ class Api::V1::ProductController < ApplicationController
       if product.present?
         render json: ResponseFormatter.success("success", product, 200), status: :ok
       else
-        render json: ResponseFormatter.error("internal error", 400, product.errors), status: :internal_server_error
+        render json: ResponseFormatter.error("internal error", 500, product.errors), status: :internal_server_error
       end
     else
       render json: ResponseFormatter.error("invalid requests", 400, store_request.errors.full_messages), status: :bad_request
@@ -55,7 +55,7 @@ class Api::V1::ProductController < ApplicationController
         row = @product_repo.get_by_uid(params[:uid])
         render json: ResponseFormatter.success("success", row, 200), status: :ok
       else
-        render json: ResponseFormatter.error("internal error", 400, nil), status: :internal_server_error
+        render json: ResponseFormatter.error("internal error", 500, nil), status: :internal_server_error
       end
     else
       render json: ResponseFormatter.error("invalid requests", 400, update_request.errors.full_messages), status: :bad_request

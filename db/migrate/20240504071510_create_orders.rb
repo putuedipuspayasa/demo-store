@@ -10,6 +10,7 @@ class CreateOrders < ActiveRecord::Migration[7.1]
       t.float :grand_total
       t.text :notes
       t.string :status
+      t.string :payment_status
     end
 
     add_index :orders, :id
@@ -18,5 +19,10 @@ class CreateOrders < ActiveRecord::Migration[7.1]
     add_index :orders, :updated_at
     add_index :orders, :customer_uid
     add_index :orders, :status
+    add_index :orders, :payment_status
+  end
+
+  def down
+    drop_table :orders
   end
 end

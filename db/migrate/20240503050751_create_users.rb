@@ -6,8 +6,9 @@ class CreateUsers < ActiveRecord::Migration[7.1]
       t.string :name
       t.string :email
       t.string :phone
-      t.string :type
+      t.string :user_type
       t.string :status
+      t.string :password_digest
     end
 
     add_index :users, :id
@@ -17,7 +18,11 @@ class CreateUsers < ActiveRecord::Migration[7.1]
     add_index :users, :name
     add_index :users, :email
     add_index :users, :phone
-    add_index :users, :type
+    add_index :users, :user_type
     add_index :users, :status
+  end
+
+  def down
+    drop_table :users
   end
 end

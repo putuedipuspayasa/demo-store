@@ -13,4 +13,8 @@ class CreateCategories < ActiveRecord::Migration[7.1]
     add_index :categories, :updated_at
     add_index :categories, :name
   end
+
+  def down
+    drop_table :categories
+  end
 end

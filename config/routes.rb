@@ -24,9 +24,12 @@ Rails.application.routes.draw do
       put "/product/:uid", to: "product#update"
       delete "/product/:uid", to: "product#delete"
 
+      get "/orders", to: "order#paginate"
       post "/order", to: "order#store"
+      get "/order/:uid", to: "order#get_by_uid"
 
-      post "/transaction", to: "transaction#store"
+      post "/payment-order", to: "payment#payment_by_order"
+
     end
   end
 end

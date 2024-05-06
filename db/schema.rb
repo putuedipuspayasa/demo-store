@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_04_073529) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_06_064532) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -73,12 +73,34 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_04_073529) do
     t.float "grand_total"
     t.text "notes"
     t.string "status"
+    t.string "payment_status"
     t.index ["created_at"], name: "index_orders_on_created_at"
     t.index ["customer_uid"], name: "index_orders_on_customer_uid"
     t.index ["id"], name: "index_orders_on_id"
+    t.index ["payment_status"], name: "index_orders_on_payment_status"
     t.index ["status"], name: "index_orders_on_status"
     t.index ["uid"], name: "index_orders_on_uid", unique: true
     t.index ["updated_at"], name: "index_orders_on_updated_at"
+  end
+
+  create_table "payment_channels", force: :cascade do |t|
+    t.string "uid", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.text "description"
+    t.text "notes"
+    t.string "payment_flow"
+    t.string "media_uid"
+    t.string "status"
+    t.string "vendor"
+    t.index ["created_at"], name: "index_payment_channels_on_created_at"
+    t.index ["id"], name: "index_payment_channels_on_id"
+    t.index ["name"], name: "index_payment_channels_on_name"
+    t.index ["status"], name: "index_payment_channels_on_status"
+    t.index ["uid"], name: "index_payment_channels_on_uid", unique: true
+    t.index ["updated_at"], name: "index_payment_channels_on_updated_at"
+    t.index ["vendor"], name: "index_payment_channels_on_vendor"
   end
 
   create_table "payments", force: :cascade do |t|
@@ -89,21 +111,21 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_04_073529) do
     t.float "amount"
     t.datetime "paid_at", precision: nil
     t.string "status"
-    t.string "type"
+    t.string "ref_id"
+    t.string "partner_ref_id"
     t.string "payment_channel_uid"
     t.string "payment_code"
-    t.string "payment_url"
     t.string "payment_name"
     t.text "notes"
     t.index ["created_at"], name: "index_payments_on_created_at"
     t.index ["id"], name: "index_payments_on_id"
     t.index ["order_uid"], name: "index_payments_on_order_uid"
     t.index ["paid_at"], name: "index_payments_on_paid_at"
+    t.index ["partner_ref_id"], name: "index_payments_on_partner_ref_id"
     t.index ["payment_channel_uid"], name: "index_payments_on_payment_channel_uid"
     t.index ["payment_code"], name: "index_payments_on_payment_code"
-    t.index ["payment_url"], name: "index_payments_on_payment_url"
+    t.index ["ref_id"], name: "index_payments_on_ref_id"
     t.index ["status"], name: "index_payments_on_status"
-    t.index ["type"], name: "index_payments_on_type"
     t.index ["uid"], name: "index_payments_on_uid", unique: true
     t.index ["updated_at"], name: "index_payments_on_updated_at"
   end
@@ -132,17 +154,18 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_04_073529) do
     t.string "name"
     t.string "email"
     t.string "phone"
-    t.string "type"
+    t.string "user_type"
     t.string "status"
+    t.string "password_digest"
     t.index ["created_at"], name: "index_users_on_created_at"
     t.index ["email"], name: "index_users_on_email"
     t.index ["id"], name: "index_users_on_id"
     t.index ["name"], name: "index_users_on_name"
     t.index ["phone"], name: "index_users_on_phone"
     t.index ["status"], name: "index_users_on_status"
-    t.index ["type"], name: "index_users_on_type"
     t.index ["uid"], name: "index_users_on_uid", unique: true
     t.index ["updated_at"], name: "index_users_on_updated_at"
+    t.index ["user_type"], name: "index_users_on_user_type"
   end
 
 end

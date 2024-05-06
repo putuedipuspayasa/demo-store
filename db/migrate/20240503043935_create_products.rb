@@ -17,4 +17,8 @@ class CreateProducts < ActiveRecord::Migration[7.1]
     add_index :products, :category_uid
     add_index :products, :name
   end
+
+  def down
+    drop_table :products
+  end
 end

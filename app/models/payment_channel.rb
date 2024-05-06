@@ -1,0 +1,2 @@
+class PaymentChannel < ApplicationRecord
+end
