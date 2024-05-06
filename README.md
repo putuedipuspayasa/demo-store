@@ -1,24 +1,32 @@
-# README
+# Simple Online Store (Integrated with iPaymu Payment Gateway): Implementing Service and Repository Pattern with Ruby on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is a simple online store developed using Ruby on Rails, highlighting the implementation of the Service and Repository patterns. The Service pattern encapsulates business logic, while the Repository pattern abstracts data access, fostering improved code organization, maintainability, and scalability. Additionally, the project seamlessly integrates with the iPaymu payment gateway, enabling secure and efficient payment processing.
 
-Things you may want to cover:
+## Prerequisites
 
-* Ruby version
+Make sure you have Ruby and Ruby on Rails installed on your system.
 
-* System dependencies
+## Installation
 
-* Configuration
+1. Clone this repository to your system.
+2. Open a terminal and navigate to the project directory.
+3. Run the command `bundle install` to install all dependencies.
+4. Run the command `rails db:create` to create the database.
+5. Run the command `rails db:migrate` to run database migrations.
 
-* Database creation
+## Usage
 
-* Database initialization
+1. Start the server with the command `rails server`.
+2. Open a browser and visit `http://localhost:3000` to view the application.
 
-* How to run the test suite
+## Contributing
 
-* Services (job queues, cache servers, search engines, etc.)
+Feel free to open a pull request if you would like to contribute. Be sure to follow our contribution guidelines.
 
-* Deployment instructions
+## License
 
-* ...
+This project is licensed under the MIT License. See the `LICENSE` file for more information.
+
+## Contact
+
+let's be friends on linkedin https://www.linkedin.com/in/i-putu-edi-puspayasa-1a8691a2/
