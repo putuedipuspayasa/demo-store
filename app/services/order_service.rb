@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 class OrderService
-  def initialize(order_repo = OrderRepository.new, order_detail_repo = OrderDetailRepository.new, product_repo = ProductRepository.new, user_repo = UserRepository.new, customer_service = CustomerService.new)
+  def initialize(
+    order_repo = OrderRepository.new,
+    order_detail_repo = OrderDetailRepository.new,
+    product_repo = ProductRepository.new,
+    user_repo = UserRepository.new,
+    customer_service = CustomerService.new)
     @order_repo = order_repo
     @order_detail_repo = order_detail_repo
     @product_repo = product_repo
@@ -11,12 +16,9 @@ class OrderService
   def create_order(params)
     ActiveRecord::Base.transaction do
       begin
-        # check customer
         customer = @customer_service.store(params)
         return :failed if customer.nil?
-
         order_uid = SecureRandom.uuid
-
         products = params[:products]
         total_price = 0
         # Loop through products array
@@ -27,8 +29,7 @@ class OrderService
           end
           if get_product.stock < product["qty"]
             return :failed, "insufficient stock"
-          end\
-
+          end
           order_detail = @order_detail_repo.store({
                                                     order_uid: order_uid,
                                                     product_uid: product["uid"],
@@ -39,11 +40,9 @@ class OrderService
                                                   })
 
           return :failed if order_detail.nil?
-
           product_total = product["qty"] * get_product.price
           total_price += product_total
         end
-
         sub_total = total_price
         discount_total = 0
         tax = 0
@@ -60,7 +59,6 @@ class OrderService
                                   })
 
         return :success, order
-
       rescue ActiveRecord::RecordInvalid => e
         raise ActiveRecord::Rollback, e.message
       end

@@ -27,7 +27,6 @@ Rails.application.routes.draw do
       get "/orders", to: "order#paginate"
       post "/order", to: "order#store"
       get "/order/:uid", to: "order#get_by_uid"
-
       post "/payment-order", to: "payment#payment_by_order"
 
     end

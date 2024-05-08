@@ -34,7 +34,6 @@ class Api::V1::ProductController < ApplicationController
 
   def store
     store_request = ProductStoreRequest.new(product_params)
-
     if store_request.valid?
       product = @product_repo.store(product_params)
       if product.present?

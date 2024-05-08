@@ -4,6 +4,16 @@ class OrderRepository
   def initialize(db = Order)
     @db = db
   end
+  def store(param)
+    row = @db.new(param)
+    if param[:uid].blank?
+      row.uid = SecureRandom.uuid
+    else
+      row.uid = param[:uid]
+    end
+    row.save
+    row
+  end
 
   def fetch_paginate(per_page: 15, page: 1, sort_field: 'id', sort_direction: 'desc', filter: {})
     offset = (page.to_i - 1) * per_page.to_i
@@ -27,17 +37,7 @@ class OrderRepository
 
   end
 
-  def store(param)
-    row = @db.new(param)
-    if param[:uid].blank?
-      row.uid = SecureRandom.uuid
-    else
-      row.uid = param[:uid]
-    end
-    row.save
 
-    row
-  end
 
   private
 
