@@ -29,7 +29,7 @@ This project is licensed under the MIT License. See the `LICENSE` file for more 
 
 ## Contact
 
-Let's be friends on linkedin https://www.linkedin.com/in/i-putu-edi-puspayasa-1a8691a2/
+Let's connnect on linkedin https://www.linkedin.com/in/i-putu-edi-puspayasa-1a8691a2/
 
 ## Key
 - crud ruby on rails
