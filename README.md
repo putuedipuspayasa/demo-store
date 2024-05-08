@@ -1,3 +1,8 @@
+
+# Project Title
+
+A brief description of what this project does and who it's for
+
 # Ruby on Rails Simple Online Store: Implementing Service and Repository Pattern, Integrated with iPaymu Payment Gateway
 
 This project is a simple online store developed using Ruby on Rails, highlighting the implementation of the Service and Repository patterns. The Service pattern encapsulates business logic, while the Repository pattern abstracts data access, fostering improved code organization, maintainability, and scalability. Additionally, the project seamlessly integrates with the iPaymu payment gateway, enabling secure and efficient payment processing.
@@ -30,3 +35,10 @@ This project is licensed under the MIT License. See the `LICENSE` file for more 
 ## Contact
 
 let's be friends on linkedin https://www.linkedin.com/in/i-putu-edi-puspayasa-1a8691a2/
+
+
+- crud ruby on rails
+- service dan repository pattern ruby on rails
+- integrasi ruby on rails dengan iPaymu
+- toko online dengan ruby on rails
+- contoh kode ruby on rails
